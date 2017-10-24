@@ -11,6 +11,7 @@ import { MePage } from '../pages/me/me';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import {CookdetailPage} from "../pages/cookdetail/cookdetail"//菜谱详情页
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     ContactPage,
     HomePage,
     TabsPage,
-    MePage
+    MePage,
+    CookdetailPage,
   ],
   imports: [
     BrowserModule,
@@ -32,7 +34,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     ContactPage,
     HomePage,
     TabsPage,
-    MePage
+    MePage,
+    CookdetailPage,
   ],
   providers: [
     StatusBar,
