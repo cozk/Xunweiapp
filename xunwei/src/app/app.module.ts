@@ -16,8 +16,13 @@ import { EditPage } from '../pages/edit/edit';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
-
 import { IonicStorageModule } from '@ionic/storage';
+
+import {HealthDetailPage} from '../pages/health-detail/health-detail'
+
+//服务
+import {HttpClientModule} from "@angular/common/http"
+import{HealthService} from '../providers/health.service'
 
 @NgModule({
   declarations: [
@@ -30,12 +35,15 @@ import { IonicStorageModule } from '@ionic/storage';
     SettingPage,
     GuanzhuPage,
     FensiPage,
-    EditPage
+    EditPage,
+    MePage,
+    HealthDetailPage
   ],
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
     IonicStorageModule.forRoot(),
+    HttpClientModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -48,12 +56,14 @@ import { IonicStorageModule } from '@ionic/storage';
     SettingPage,
     GuanzhuPage,
     FensiPage,
-    EditPage
+    EditPage,
+    HealthDetailPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    HealthService
   ]
 })
 export class AppModule {}
