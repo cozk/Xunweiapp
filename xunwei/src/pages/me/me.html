@@ -45,6 +45,9 @@
     </ion-row>
   </ion-card>
 
-
-
+  <ion-tabs #rootTabs>
+    <ion-tab [root]="tab1Root" tabTitle="菜谱" tabIcon="home"></ion-tab>
+    <ion-tab [root]="tab2Root" tabTitle="文章" tabIcon="ios-book-outline"></ion-tab>
+    <ion-tab [root]="tab3Root" tabTitle="作品" tabIcon="nutrition"></ion-tab>
+  </ion-tabs>
 </ion-content>

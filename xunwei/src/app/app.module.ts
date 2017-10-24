@@ -11,13 +11,13 @@ import { MePage } from '../pages/me/me';
 import { SettingPage } from '../pages/setting/setting';
 import { GuanzhuPage } from '../pages/guanzhu/guanzhu';
 import { FensiPage } from '../pages/fensi/fensi';
-// import { EditPage } from '../pages/edit/edit';
-
+import { EditPage } from '../pages/edit/edit';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
-
 import { IonicStorageModule } from '@ionic/storage';
+
+
 
 @NgModule({
   declarations: [
@@ -30,7 +30,7 @@ import { IonicStorageModule } from '@ionic/storage';
     SettingPage,
     GuanzhuPage,
     FensiPage,
-    // EditPage
+    EditPage
   ],
   imports: [
     BrowserModule,
@@ -48,12 +48,12 @@ import { IonicStorageModule } from '@ionic/storage';
     SettingPage,
     GuanzhuPage,
     FensiPage,
-    // EditPage
+    EditPage,
   ],
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
   ]
 })
 export class AppModule {}

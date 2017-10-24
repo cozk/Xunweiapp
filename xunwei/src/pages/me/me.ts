@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams,ModalController } from 'ionic-angular';
 import { SettingPage } from '../setting/setting';
+import { GuanzhuPage } from '../guanzhu/guanzhu';
+import { FensiPage } from '../fensi/fensi';
+import { EditPage } from '../edit/edit';
 /**
  * Generated class for the MePage page.
  *
@@ -40,15 +43,15 @@ export class MePage {
     modelPage.present();
   }
   toGuanzhu(){
-    const modelPage=this.modalCtrl.create(SettingPage);
+    const modelPage=this.modalCtrl.create(GuanzhuPage);
     modelPage.present();
   }
   toFensi(){
-    const modelPage=this.modalCtrl.create(SettingPage);
+    const modelPage=this.modalCtrl.create(FensiPage);
     modelPage.present();
   }
   toMydata(){
-    const modelPage=this.modalCtrl.create(SettingPage);
+    const modelPage=this.modalCtrl.create(EditPage);
     modelPage.present();
   }
 }
