@@ -8,9 +8,16 @@ import { ContactPage } from '../pages/contact/contact';
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
 import { MePage } from '../pages/me/me';
+import { SettingPage } from '../pages/setting/setting';
+import { GuanzhuPage } from '../pages/guanzhu/guanzhu';
+import { FensiPage } from '../pages/fensi/fensi';
+import { EditPage } from '../pages/edit/edit';
+
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+
+import { IonicStorageModule } from '@ionic/storage';
 
 @NgModule({
   declarations: [
@@ -19,11 +26,16 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     ContactPage,
     HomePage,
     TabsPage,
-    MePage
+    MePage,
+    SettingPage,
+    GuanzhuPage,
+    FensiPage,
+    EditPage
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    IonicStorageModule.forRoot(),
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -32,7 +44,11 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     ContactPage,
     HomePage,
     TabsPage,
-    MePage
+    MePage,
+    SettingPage,
+    GuanzhuPage,
+    FensiPage,
+    EditPage
   ],
   providers: [
     StatusBar,
