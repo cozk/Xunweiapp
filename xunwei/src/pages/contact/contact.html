@@ -1,17 +1,25 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      Contact
+      健康养生
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content>
-  <ion-list>
-    <ion-list-header>Follow us on Twitter</ion-list-header>
-    <ion-item>
-      <ion-icon name="ionic" item-start></ion-icon>
-      @ionicframework
+
+  <ion-list >
+    <ion-item *ngFor="let item of items" (click)="itemSelected(item)">
+      <img src="{{item?.healthimg}}">
+      <h2>{{item?.healthtitle}}</h2>
     </ion-item>
   </ion-list>
+
+  <!--上拉加载-->
+  <ion-infinite-scroll (ionInfinite)="$event.waitFor(doInfinite($event))">
+    <ion-infinite-scroll-content
+      loadingSpinner="bubbles"
+      loadingText="加载更多内容..."></ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+
 </ion-content>

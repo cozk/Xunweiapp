@@ -8,9 +8,21 @@ import { ContactPage } from '../pages/contact/contact';
 import { HomePage } from '../pages/home/home';
 import { TabsPage } from '../pages/tabs/tabs';
 import { MePage } from '../pages/me/me';
+import { SettingPage } from '../pages/setting/setting';
+import { GuanzhuPage } from '../pages/guanzhu/guanzhu';
+import { FensiPage } from '../pages/fensi/fensi';
+import { EditPage } from '../pages/edit/edit';
+
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { IonicStorageModule } from '@ionic/storage';
+
+import {HealthDetailPage} from '../pages/health-detail/health-detail'
+import {CookdetailPage} from '../pages/cookdetail/cookdetail'//菜谱详情页
+//服务
+import {HttpClientModule} from "@angular/common/http"
+import{HealthService} from '../providers/health.service'
 
 @NgModule({
   declarations: [
@@ -19,11 +31,19 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     ContactPage,
     HomePage,
     TabsPage,
-    MePage
+    MePage,
+    CookdetailPage,
+    SettingPage,
+    GuanzhuPage,
+    FensiPage,
+    EditPage,
+    HealthDetailPage
   ],
   imports: [
     BrowserModule,
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp),
+    IonicStorageModule.forRoot(),
+    HttpClientModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -32,12 +52,19 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     ContactPage,
     HomePage,
     TabsPage,
-    MePage
+    MePage,
+    CookdetailPage,
+    SettingPage,
+    GuanzhuPage,
+    FensiPage,
+    EditPage,
+    HealthDetailPage
   ],
   providers: [
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    HealthService
   ]
 })
 export class AppModule {}

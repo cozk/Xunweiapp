@@ -1,18 +1,53 @@
-<!--
-  Generated template for the MePage page.
-
-  See http://ionicframework.com/docs/components/#navigation for more info on
-  Ionic pages and navigation.
--->
 <ion-header>
-
-  <ion-navbar>
-    <ion-title>me</ion-title>
-  </ion-navbar>
+  <ion-grid>
+    <ion-row>
+      <ion-col col-4>
+        <ion-icon name="ios-settings-outline" (click)="toSetting()" style="font-size: 25px !important;"></ion-icon>
+      </ion-col>
+      <ion-col col-4 style="text-align:center ;font-size: 20px !important; ">
+        <ion-note style="color: #000">我的</ion-note>
+      </ion-col>
+      <ion-col col-4 style="text-align: right;margin-right: -3px; font-size: 25px !important;" >
+        <ion-icon name="ios-mail-outline"></ion-icon>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
 
 </ion-header>
 
 
 <ion-content padding>
 
+  <ion-card style="height:200px !important">
+    <ion-item>
+      <ion-avatar item-start>
+        <img src="assets/imgs/2.jpg" style="width: 80px !important; height: 80px !important;">
+      </ion-avatar>
+      <p class="_p">{{nickname}}</p>
+      <p>&nbsp;&nbsp;{{label}}</p>
+    </ion-item>
+    <br>
+    <hr>
+    <br>
+    <ion-row>
+      <ion-col col-4 style="text-align: center">
+        <div class="_fon" (click)="toGuanzhu()">关注</div>
+        <span>{{guanzhu}}</span>
+      </ion-col>
+      <ion-col col-4 style="text-align: center">
+        <div class="_fon" (click)="toFensi()">粉丝 </div>
+        <span>{{fensi}}</span>
+      </ion-col>
+      <ion-col col-4 style="text-align: center">
+        <ion-icon name="ios-leaf-outline"></ion-icon>
+        <div class="_fon" (click)="toMydata()">我的资料</div>
+      </ion-col>
+    </ion-row>
+  </ion-card>
+
+  <ion-tabs #rootTabs>
+    <ion-tab [root]="tab1Root" tabTitle="菜谱" tabIcon="home"></ion-tab>
+    <ion-tab [root]="tab2Root" tabTitle="文章" tabIcon="ios-book-outline"></ion-tab>
+    <ion-tab [root]="tab3Root" tabTitle="作品" tabIcon="nutrition"></ion-tab>
+  </ion-tabs>
 </ion-content>
