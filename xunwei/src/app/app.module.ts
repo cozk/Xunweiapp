@@ -33,7 +33,6 @@ import{HealthService} from '../providers/health.service'
     TabsPage,
     MePage,
     CookdetailPage,
-    MePage,
     SettingPage,
     GuanzhuPage,
     FensiPage,
