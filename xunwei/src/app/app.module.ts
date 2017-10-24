@@ -19,11 +19,10 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { IonicStorageModule } from '@ionic/storage';
 
 import {HealthDetailPage} from '../pages/health-detail/health-detail'
-
+import {CookdetailPage} from '../pages/cookdetail/cookdetail'//菜谱详情页
 //服务
 import {HttpClientModule} from "@angular/common/http"
 import{HealthService} from '../providers/health.service'
-import {CookdetailPage} from "../pages/cookdetail/cookdetail"//菜谱详情页
 
 @NgModule({
   declarations: [
