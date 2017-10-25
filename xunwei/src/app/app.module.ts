@@ -25,6 +25,10 @@ import {CooksearchPage} from "../pages/cooksearch/cooksearch"//菜谱搜索
 //服务
 import {HttpClientModule} from "@angular/common/http"
 import{HealthService} from '../providers/health.service'
+//管道
+import{IndexhotmenuPipe} from'./../pipes/indexhotmenu.pipe'
+import{JiequPipe} from'./../pipes/jiequ.pipe'
+import{HuatijiequPipe} from'./../pipes/huatijiequ.pipe'
 import {CookbookService} from "../providers/cookbook.service"
 @NgModule({
   declarations: [
@@ -39,6 +43,10 @@ import {CookbookService} from "../providers/cookbook.service"
     GuanzhuPage,
     FensiPage,
     EditPage,
+    HealthDetailPage,
+    IndexhotmenuPipe,
+    JiequPipe,
+    HuatijiequPipe,
     HealthDetailPage,
     CooklistPage,
     CooksearchPage,
