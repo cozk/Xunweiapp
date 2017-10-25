@@ -1,0 +1,39 @@
+page-cooklist {
+  [col-4] {
+    font-size: 2rem;
+  }
+  ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  li{
+    padding-left: 20px;
+    float: left;
+  }
+  .button-outline-ios{
+    border: 0;
+
+  }
+  .button-outline-ios:active{
+    background: #ccc;
+    color: #333;
+  }
+  .button-ios{
+    height: 2rem;
+    width: 4rem;
+  }
+  .list-ios {
+    margin: 0px 0 32px;
+    padding-top: 20px;
+    border-top: 1px solid #ccc;
+  }
+  .item-md ion-thumbnail,.item-ios ion-thumbnail{
+    //padding-top: 1.5rem;
+  }
+  .item-md ion-thumbnail img, .item-ios ion-thumbnail img {
+    width: 10rem;
+    height: 7rem;
+  }
+
+}

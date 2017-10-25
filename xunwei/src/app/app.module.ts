@@ -20,10 +20,16 @@ import { IonicStorageModule } from '@ionic/storage';
 
 import {HealthDetailPage} from '../pages/health-detail/health-detail'
 import {CookdetailPage} from '../pages/cookdetail/cookdetail'//菜谱详情页
+import {CooklistPage} from "../pages/cooklist/cooklist"//菜谱列表
+import {CooksearchPage} from "../pages/cooksearch/cooksearch"//菜谱搜索
 //服务
 import {HttpClientModule} from "@angular/common/http"
 import{HealthService} from '../providers/health.service'
-
+//管道
+import{IndexhotmenuPipe} from'./../pipes/indexhotmenu.pipe'
+import{JiequPipe} from'./../pipes/jiequ.pipe'
+import{HuatijiequPipe} from'./../pipes/huatijiequ.pipe'
+import {CookbookService} from "../providers/cookbook.service"
 @NgModule({
   declarations: [
     MyApp,
@@ -37,13 +43,19 @@ import{HealthService} from '../providers/health.service'
     GuanzhuPage,
     FensiPage,
     EditPage,
-    HealthDetailPage
+    HealthDetailPage,
+    IndexhotmenuPipe,
+    JiequPipe,
+    HuatijiequPipe,
+    HealthDetailPage,
+    CooklistPage,
+    CooksearchPage,
   ],
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
     IonicStorageModule.forRoot(),
-    HttpClientModule
+    HttpClientModule,
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -58,13 +70,16 @@ import{HealthService} from '../providers/health.service'
     GuanzhuPage,
     FensiPage,
     EditPage,
-    HealthDetailPage
+    HealthDetailPage,
+    CooklistPage,
+    CooksearchPage,
   ],
   providers: [
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    HealthService
+    HealthService,
+    CookbookService,
   ]
 })
 export class AppModule {}
