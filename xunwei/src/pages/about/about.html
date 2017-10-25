@@ -6,7 +6,7 @@
   </ion-navbar>
   <ion-toolbar no-border-top>
     <ion-segment [(ngModel)]="cookbookModel">
-      <ion-segment-button value="jia" class="segmentCss" >
+      <ion-segment-button value="jia" >
         家常菜谱
       </ion-segment-button>
       <ion-segment-button value="zhong">
@@ -22,20 +22,37 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content padding (swipe)="swipeEvent($event)">
+<ion-content  (swipe)="swipeEvent($event)">
   <div [ngSwitch]="cookbookModel">
     <ion-list *ngSwitchCase="'jia'">
-      <ion-item no-lines>
-        家常菜 <ion-icon name="arrow-forward"></ion-icon>
+      <ion-item no-lines (click)="toList()">
+        <ion-grid>
+          <ion-row>
+            <ion-col col-6>
+              <button ion-button color="dark" outline>最新</button>
+              <button ion-button color="dark" outline>最热</button>
+            </ion-col>
+            <ion-col col-6 style="text-align: right">
+              <button ion-button color="dark" outline>更多<ion-icon name="ios-arrow-forward"></ion-icon></button>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+
       </ion-item>
-      <ion-card (click)="itemSelected()">
-        <img src="../../assets/imgs/cookbook/cai01.jpg"/>
-        <ion-card-content>
-          <ion-card-title>
-            排骨炖豆角
-          </ion-card-title>
-        </ion-card-content>
-      </ion-card>
+      <ion-grid>
+        <ion-row>
+            <ul col-12>
+              <li col-6 *ngFor="let item of items" (click)="itemSelected(item?.ckname)">
+                <ion-card>
+                  <img src="../../assets/imgs/cookbook/{{item?.ckimg}}"/>
+                  <ion-card-content>
+                    {{item?.ckname}}
+                  </ion-card-content>
+                </ion-card>
+              </li>
+            </ul>
+        </ion-row>
+      </ion-grid>
     </ion-list>
 
     <ion-list *ngSwitchCase="'zhong'">
