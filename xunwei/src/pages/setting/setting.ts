@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams,ViewController } from 'ionic-angular';
 import { LoginPage } from '../login/login';
-
+import { Storage } from '@ionic/storage';
 @IonicPage()
 @Component({
   selector: 'page-setting',
@@ -24,12 +24,12 @@ export class SettingPage {
     this.viewCtrl.dismiss();
   }
 
-  // exit(){
-  //   this.storage.ready().then(()=>{
-  //     this.storage.remove('isLogin');
-  //   });
-  //   this.viewCtrl.dismiss();
-  //   this.navCtrl.push(LoginPage);
-  // }
+  exit(){
+    this.storage.ready().then(()=>{
+      this.storage.remove('isLogin');
+    });
+    this.viewCtrl.dismiss();
+    this.navCtrl.push(LoginPage);
+  }
 
 }
