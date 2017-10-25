@@ -10,7 +10,7 @@
       <ion-col col-4 (click)="back()">
         <ion-icon name="arrow-back" ></ion-icon>
       </ion-col>
-      <ion-col col-4><ion-note>detail</ion-note></ion-col>
+      <ion-col col-4 style="text-align: center"><ion-note>{{cookDetail?.ckname}}</ion-note></ion-col>
       <ion-col col-4 style="text-align: right">
         <ion-icon name="more"></ion-icon>
       </ion-col>
@@ -22,7 +22,7 @@
 
 <ion-content >
   <div class="c_c1">
-    <div class="img"></div>
+    <img class="img" src="../../assets/imgs/cook_detail/{{cookDetail?.ckdetailimg}}" alt="">
   </div>
   <div class="c_c2">
     <h1>芝士蛋糕</h1>
@@ -42,9 +42,9 @@
   <div class="c_c5">
     <ul class="argsul">
       <li class="args1" alt="工艺">
-        <ion-icon name="ios-flame-outline"></ion-icon> 烘焙</li>
+        <ion-icon name="ios-flame-outline"></ion-icon> {{cookDetail?.ckgongyi}}</li>
       <li class="args2" alt="口味" >
-        <ion-icon name="ios-cafe-outline"></ion-icon>奶香味</li>
+        <ion-icon name="ios-cafe-outline"></ion-icon>{{cookDetail?.ckkouwei}}</li>
       <li class="args3" alt="时间">
         <ion-icon name="ios-clock-outline"></ion-icon>&lt;60分钟</li>
     </ul>
@@ -54,14 +54,14 @@
 
     <ion-item-group>
         <ion-item-divider color="light">主料</ion-item-divider>
-        <ion-item>主料1</ion-item>
-        <ion-item>主料2</ion-item>
-        <ion-item>主料3</ion-item>
+        <ion-item>{{cookDetail?.zhuliaoa}}</ion-item>
+        <ion-item>{{cookDetail?.zhuliaob}}</ion-item>
+        <ion-item>{{cookDetail?.zhuliaoc}}</ion-item>
     </ion-item-group>
     <ion-item-group>
       <ion-item-divider color="light">辅料</ion-item-divider>
-      <ion-item>辅料1</ion-item>
-      <ion-item>辅料2</ion-item>
+      <ion-item>{{cookDetail?.fuliaoa}}</ion-item>
+      <ion-item>{{cookDetail?.fuliaoa}}</ion-item>
     </ion-item-group>
   </div>
   <!--步骤-->
@@ -69,46 +69,46 @@
     <strong class="step_title">做法</strong>
     <ion-card>
       <ion-card-header>
-         <p>1.做奶油水果夹心。</p>
+         <p>1.{{cookDetail?.ckbuzhoua}}</p>
       </ion-card-header>
       <ion-card-content>
-        <img src="../../assets/imgs/cook_detail/hong01a.jpg" alt="">
+        <img src="../../assets/imgs/cook_detail/{{cookDetail?.ckbzimga}}" alt="">
 
       </ion-card-content>
     </ion-card>
     <ion-card>
       <ion-card-header>
-        <p>2.做奶油水果夹心。</p>
+        <p>2.{{cookDetail?.ckbuzhoub}}</p>
       </ion-card-header>
       <ion-card-content>
-        <img src="../../assets/imgs/cook_detail/hong01a.jpg" alt="">
+        <img src="../../assets/imgs/cook_detail/{{cookDetail?.ckbzimgb}}" alt="">
 
       </ion-card-content>
     </ion-card>
     <ion-card>
       <ion-card-header>
-        <p>3.做奶油水果夹心。</p>
+        <p>3.{{cookDetail?.ckbuzhouc}}</p>
       </ion-card-header>
       <ion-card-content>
-        <img src="../../assets/imgs/cook_detail/hong01a.jpg" alt="">
+        <img src="../../assets/imgs/cook_detail/{{cookDetail?.ckbzimgc}}" alt="">
 
       </ion-card-content>
     </ion-card>
     <ion-card>
       <ion-card-header>
-        <p>4.做奶油水果夹心。</p>
+        <p>4.{{cookDetail?.ckbuzhoud}}</p>
       </ion-card-header>
       <ion-card-content>
-        <img src="../../assets/imgs/cook_detail/hong01a.jpg" alt="">
+        <img src="../../assets/imgs/cook_detail/{{cookDetail?.ckbzimgd}}" alt="">
 
       </ion-card-content>
     </ion-card>
     <ion-card>
       <ion-card-header>
-        <p>5.做奶油水果夹心。</p>
+        <p>5.{{cookDetail?.ckbuzhoue}}</p>
       </ion-card-header>
       <ion-card-content>
-        <img src="../../assets/imgs/cook_detail/hong01a.jpg" alt="">
+        <img src="../../assets/imgs/cook_detail/{{cookDetail?.ckbzimge}}" alt="">
 
       </ion-card-content>
     </ion-card>
@@ -119,7 +119,7 @@
       烹饪技巧
     </ion-card-header>
     <ion-card-content>
-      装蛋白和蛋黄的盘一定要无油、无水。蛋白打发到硬性程度 烤箱提前预热好。
+      {{cookDetail?.ckstory}}
     </ion-card-content>
   </ion-card>
   <!--评论-->
@@ -154,3 +154,18 @@
   </ion-card>
 
 </ion-content>
+<ion-footer>
+  <ion-grid>
+    <ion-row>
+      <ion-col col-4 (click)="back()" class="footCss">
+        <ion-icon name="ios-thumbs-up-outline" ></ion-icon>
+      </ion-col>
+      <ion-col col-4 class="footCss">
+        <ion-icon name="ios-star-outline"></ion-icon>
+      </ion-col>
+      <ion-col col-4 class="footCss">
+        <ion-icon name="ios-text-outline"></ion-icon>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-footer>
