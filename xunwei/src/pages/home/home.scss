@@ -1,3 +1,70 @@
 page-home {
+  #searchadd{
 
+  }
+  #searchtext{
+    width: 100%;
+    height: 35px;
+    background-color: gainsboro;
+    border-radius: 5px;
+    border: 0px solid gainsboro;
+    text-align: center;
+  }
+  #healthyfood{
+    margin-top: 8px;
+    width: 48%;
+    height: 70px;
+    float:left;
+    background-color:rgb(245,168,126);
+    border:0px solid rgb(245,168,126);
+    border-radius: 3px;
+    background-image: url('./../../assets/home/jieqi.jpg');
+    background-size:100% 100%;
+  }
+  #p1{
+    display: inline-block;
+    color:white;
+    margin-top: 7%;
+    margin-left: 6%;
+    font-size: 22px;
+  }
+  #p2{
+    display:inline-block;
+    color:white;
+    margin-left: 6%;
+    font-size: 13px;
+  }
+  #topactivity{
+    margin-top: 8px;
+    width: 23%;
+    height: 70px;
+    float:left;
+    margin-left: 3%;
+    background-color:rgb(87,200,196);
+    border: 0px solid rgb(87,200,196);
+    border-radius: 3px;
+    text-align: center;
+  }
+  .p3{
+    display: inline-block;
+    margin-top: 9%;
+    color: white;
+    font-size: 21px;
+  }
+  .p4{
+    display: inline-block;
+    color: white;
+    font-size: 21px;
+  }
+  #postdish{
+    margin-top: 8px;
+    width: 23%;
+    height: 70px;
+    float:left;
+    margin-left: 3%;
+    background-color:rgb(110,210,160);
+    border: 0px solid rgb(110,210,160);
+    border-radius: 3px;
+    text-align: center;
+  }
 }
