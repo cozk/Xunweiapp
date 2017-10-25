@@ -23,7 +23,10 @@ import {CookdetailPage} from '../pages/cookdetail/cookdetail'//菜谱详情页
 //服务
 import {HttpClientModule} from "@angular/common/http"
 import{HealthService} from '../providers/health.service'
-
+//管道
+import{IndexhotmenuPipe} from'./../pipes/indexhotmenu.pipe'
+import{JiequPipe} from'./../pipes/jiequ.pipe'
+import{HuatijiequPipe} from'./../pipes/huatijiequ.pipe'
 @NgModule({
   declarations: [
     MyApp,
@@ -37,7 +40,10 @@ import{HealthService} from '../providers/health.service'
     GuanzhuPage,
     FensiPage,
     EditPage,
-    HealthDetailPage
+    HealthDetailPage,
+    IndexhotmenuPipe,
+    JiequPipe,
+    HuatijiequPipe
   ],
   imports: [
     BrowserModule,
