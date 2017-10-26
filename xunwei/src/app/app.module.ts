@@ -12,7 +12,9 @@ import { SettingPage } from '../pages/setting/setting';
 import { GuanzhuPage } from '../pages/guanzhu/guanzhu';
 import { FensiPage } from '../pages/fensi/fensi';
 import { EditPage } from '../pages/edit/edit';
-
+import { UpPage } from '../pages/up/up';
+import { LoginPage }from '../pages/login/login'
+import { RegisterPage }from '../pages/register/register'
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -26,6 +28,9 @@ import {SeachlistPage} from "../pages/seachlist/seachlist"//搜索结果
 //服务
 import {HttpClientModule} from "@angular/common/http"
 import{HealthService} from '../providers/health.service'
+import{ UsersService } from '../providers/users.service'
+import{ PersonalService } from '../providers/personal.service'
+
 //管道
 import{IndexhotmenuPipe} from'./../pipes/indexhotmenu.pipe'
 import{JiequPipe} from'./../pipes/jiequ.pipe'
@@ -49,6 +54,10 @@ import {CookbookService} from "../providers/cookbook.service"
     GuanzhuPage,
     FensiPage,
     EditPage,
+    UpPage,
+    HealthDetailPage,
+    LoginPage,
+    RegisterPage,
     HealthDetailPage,
     IndexhotmenuPipe,
     JiequPipe,
@@ -66,7 +75,7 @@ import {CookbookService} from "../providers/cookbook.service"
     BrowserModule,
     IonicModule.forRoot(MyApp),
     IonicStorageModule.forRoot(),
-    HttpClientModule,
+    HttpClientModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -81,6 +90,10 @@ import {CookbookService} from "../providers/cookbook.service"
     GuanzhuPage,
     FensiPage,
     EditPage,
+    UpPage,
+    HealthDetailPage,
+    LoginPage,
+    RegisterPage,
     HealthDetailPage,
     CooklistPage,
     CooksearchPage,
@@ -92,6 +105,9 @@ import {CookbookService} from "../providers/cookbook.service"
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     HealthService,
     CookbookService,
+    HealthService,
+    UsersService,
+    PersonalService
   ]
 })
 export class AppModule {}

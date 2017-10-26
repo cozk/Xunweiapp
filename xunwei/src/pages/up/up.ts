@@ -1,35 +1,32 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams,ViewController } from 'ionic-angular';
-import { LoginPage } from '../login/login';
-import { Storage } from '@ionic/storage';
+
+/**
+ * Generated class for the UpPage page.
+ *
+ * See https://ionicframework.com/docs/components/#navigation for more info on
+ * Ionic pages and navigation.
+ */
+
 @IonicPage()
 @Component({
-  selector: 'page-setting',
-  templateUrl: 'setting.html',
+  selector: 'page-up',
+  templateUrl: 'up.html',
 })
-export class SettingPage {
+export class UpPage {
 
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
     public viewCtrl: ViewController,
-    private storage:Storage,
   ) {
   }
 
   ionViewDidLoad() {
-
+    console.log('ionViewDidLoad UpPage');
   }
   toback() {
     this.viewCtrl.dismiss();
-  }
-
-  exit(){
-    this.storage.ready().then(()=>{
-      this.storage.remove('isLogin');
-    });
-    this.viewCtrl.dismiss();
-    this.navCtrl.push(LoginPage);
   }
 
 }
