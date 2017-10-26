@@ -20,4 +20,14 @@ export class HottopicService {
     return this.http.get(this.url+'/hot').toPromise().then((data)=> data
     )
   }
+
+  getDetailTopic(title):Promise<any>{
+    return this.getAllHottopic().then(data=>{
+      for(let item of data){
+        if(item.title===title){
+          return item;
+        }
+      }
+    })
+  }
 }

@@ -22,28 +22,35 @@
 
 
 <ion-content >
-    <ul>
-      <li><button ion-button color="dark" outline>家常菜</button></li>
-      <li><button ion-button color="dark" outline>海鲜</button></li>
-      <li><button ion-button color="dark" outline>私家</button></li>
-      <li><button ion-button color="dark" outline>私家</button></li>
-    </ul>
-  <ion-list no-lines>
-    <ion-item>
-      <ion-thumbnail item-start >
-        <img src="../../assets/imgs/cookbook/hong01.jpg">
-      </ion-thumbnail>
-      <h2>小新游泳蛋糕</h2>
-      <p>大菠萝</p>
-      <p>原料：</p>
-    </ion-item>
-    <ion-item>
-      <ion-thumbnail item-start >
-        <img src="../../assets/imgs/cookbook/hong01.jpg">
-      </ion-thumbnail>
-      <h2>小新游泳蛋糕</h2>
-      <p>大菠萝</p>
-      <p>原料：</p>
-    </ion-item>
-  </ion-list>
+  <div padding>
+    <ion-segment [(ngModel)]="cooklistModel">
+      <ion-segment-button *ngFor="let item of list01" value="{{item.val}}">
+        {{item.list01}}
+      </ion-segment-button>
+    </ion-segment>
+  </div>
+
+  <div [ngSwitch]="cooklistModel">
+    <ion-list *ngSwitchCase="'01'" no-lines >
+      <ion-item>
+        <ion-thumbnail item-start >
+          <img src="../../assets/imgs/cookbook/hong01.jpg">
+        </ion-thumbnail>
+        <h2>小新游泳蛋糕</h2>
+        <p>大菠萝</p>
+        <p>原料：</p>
+      </ion-item>
+    </ion-list>
+
+    <ion-list *ngSwitchCase="'02'" no-lines>
+      <ion-item>
+        <ion-thumbnail item-start >
+          <img src="../../assets/imgs/cookbook/hong01.jpg">
+        </ion-thumbnail>
+        <h2>小新游泳蛋糕</h2>
+        <p>大菠萝</p>
+        <p>原料：</p>
+      </ion-item>
+    </ion-list>
+  </div>
 </ion-content>
