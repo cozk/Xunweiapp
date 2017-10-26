@@ -32,8 +32,6 @@ export class HealthDetailPage {
     })
   }
   back() {
-    // this.navCtrl.push(TabsPage);
-    // this.navCtrl.pop();
     this.ViewCtrl.dismiss();
   }
 }

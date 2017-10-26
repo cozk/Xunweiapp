@@ -5,7 +5,12 @@ import { MyApp } from './app.component';
 
 import { AboutPage } from '../pages/about/about';
 import { ContactPage } from '../pages/contact/contact';
+import { HomehotdishPage } from '../pages/homehotdish/homehotdish';
+import { HomehottopicPage } from '../pages/homehottopic/homehottopic';
+import { HomehealthPage } from '../pages/homehealth/homehealth';
+import { HomejiaPage } from '../pages/homejia/homejia';
 import { HomePage } from '../pages/home/home';
+import { TopicdetailPage} from'./../pages/topicdetail/topicdetail'
 import { TabsPage } from '../pages/tabs/tabs';
 import { MePage } from '../pages/me/me';
 import { SettingPage } from '../pages/setting/setting';
@@ -25,11 +30,12 @@ import {CooksearchPage} from "../pages/cooksearch/cooksearch"//菜谱搜索
 //服务
 import {HttpClientModule} from "@angular/common/http"
 import{HealthService} from '../providers/health.service'
+import {CookbookService} from "../providers/cookbook.service"
 //管道
 import{IndexhotmenuPipe} from'./../pipes/indexhotmenu.pipe'
 import{JiequPipe} from'./../pipes/jiequ.pipe'
 import{HuatijiequPipe} from'./../pipes/huatijiequ.pipe'
-import {CookbookService} from "../providers/cookbook.service"
+
 @NgModule({
   declarations: [
     MyApp,
@@ -50,6 +56,11 @@ import {CookbookService} from "../providers/cookbook.service"
     HealthDetailPage,
     CooklistPage,
     CooksearchPage,
+    HomehotdishPage,
+    HomehottopicPage,
+    HomehealthPage,
+    TopicdetailPage,
+    HomejiaPage
   ],
   imports: [
     BrowserModule,
@@ -73,6 +84,11 @@ import {CookbookService} from "../providers/cookbook.service"
     HealthDetailPage,
     CooklistPage,
     CooksearchPage,
+    HomehotdishPage,
+    HomehottopicPage,
+    HomehealthPage,
+    TopicdetailPage,
+    HomejiaPage
   ],
   providers: [
     StatusBar,
