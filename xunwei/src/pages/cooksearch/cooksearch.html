@@ -12,16 +12,10 @@
         <ion-icon name="arrow-back" ></ion-icon>
       </ion-col>
       <ion-col col-8 style="text-align: center">
-        <ion-searchbar
-          [(ngModel)]="myInput"
-          [showCancelButton]="shouldShowCancel"
-          (ionInput)="onInput($event)"
-          (ionCancel)="onCancel($event)"
-          placeholder="搜索你感兴趣的">
-        </ion-searchbar>
+        <input type="text" placeholder="搜素菜谱或食材..." id="searchtext" #search>
       </ion-col>
       <ion-col col-2 style="text-align: right">
-        搜索
+        <button  class="search"(click)="toSearchList(search.value)">搜索</button>
       </ion-col>
     </ion-row>
   </ion-grid>
@@ -30,5 +24,16 @@
 
 
 <ion-content padding>
+  <ion-card>
+    <ion-card-header>
+      热门搜索
+    </ion-card-header>
 
+    <ion-list>
+      <button ion-item *ngFor="let item of hotSearch" (click)="toSearchList(item.hs)">
+        <ion-icon ios="ios-search" md="md-search"></ion-icon>
+        {{item.hs}}
+      </button>
+    </ion-list>
+  </ion-card>
 </ion-content>

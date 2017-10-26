@@ -3,6 +3,7 @@ import { NavController ,ModalController} from 'ionic-angular';
 import {CookdetailPage} from "../cookdetail/cookdetail"
 import {CooklistPage} from "../cooklist/cooklist";
 import {CookbookService} from "../../providers/cookbook.service"
+import {CooksearchPage} from "../cooksearch/cooksearch";
 @Component({
   selector: 'page-about',
   templateUrl: 'about.html'
@@ -11,6 +12,7 @@ export class AboutPage {
   items:any;
   cookArray = ['jia','zhong','wai','hong'];
   cookbookModel: string = this.cookArray[0];
+  isOutline: boolean = false;
   constructor(
     public navCtrl: NavController,
     public modalCtrl:ModalController,
@@ -41,6 +43,8 @@ export class AboutPage {
       }
     }
   }
+
+
     //点击进入详情页
     itemSelected(item) {
       console.log("菜名");
@@ -64,4 +68,9 @@ export class AboutPage {
       modelPage.present();
 
     }
+  //去搜索页
+  toSearch(){
+    let modelPage=this.modalCtrl.create(CooksearchPage);
+    modelPage.present();
+  }
 }

@@ -17,7 +17,9 @@ import { SettingPage } from '../pages/setting/setting';
 import { GuanzhuPage } from '../pages/guanzhu/guanzhu';
 import { FensiPage } from '../pages/fensi/fensi';
 import { EditPage } from '../pages/edit/edit';
-
+import { UpPage } from '../pages/up/up';
+import { LoginPage }from '../pages/login/login'
+import { RegisterPage }from '../pages/register/register'
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -27,15 +29,25 @@ import {HealthDetailPage} from '../pages/health-detail/health-detail'
 import {CookdetailPage} from '../pages/cookdetail/cookdetail'//菜谱详情页
 import {CooklistPage} from "../pages/cooklist/cooklist"//菜谱列表
 import {CooksearchPage} from "../pages/cooksearch/cooksearch"//菜谱搜索
+import {SeachlistPage} from "../pages/seachlist/seachlist"//搜索结果
 //服务
 import {HttpClientModule} from "@angular/common/http"
 import{HealthService} from '../providers/health.service'
 import {CookbookService} from "../providers/cookbook.service"
+import{ UsersService } from '../providers/users.service'
+import{ PersonalService } from '../providers/personal.service'
+
 //管道
 import{IndexhotmenuPipe} from'./../pipes/indexhotmenu.pipe'
 import{JiequPipe} from'./../pipes/jiequ.pipe'
 import{HuatijiequPipe} from'./../pipes/huatijiequ.pipe'
 
+import {JiachangPipe} from "../pipes/jiachang.pipe"
+import {ZhonghuaPipe} from "../pipes/zhonghua.pipe"
+import {WaiguoPipe} from "../pipes/waiguo.pipe"
+import {HongpeiPipe} from "../pipes/hongpei.pipe"
+import {SearchCooksPipe} from "../pipes/search-cooks.pipe"
+import {CookbookService} from "../providers/cookbook.service"
 @NgModule({
   declarations: [
     MyApp,
@@ -49,24 +61,33 @@ import{HuatijiequPipe} from'./../pipes/huatijiequ.pipe'
     GuanzhuPage,
     FensiPage,
     EditPage,
+    UpPage,
+    HealthDetailPage,
+    LoginPage,
+    RegisterPage,
     HealthDetailPage,
     IndexhotmenuPipe,
     JiequPipe,
     HuatijiequPipe,
-    HealthDetailPage,
+    JiachangPipe,//家常
+    ZhonghuaPipe,//中华
+    WaiguoPipe,//外国
+    HongpeiPipe,//烘焙
+    SearchCooksPipe,//搜索
     CooklistPage,
     CooksearchPage,
     HomehotdishPage,
     HomehottopicPage,
     HomehealthPage,
     TopicdetailPage,
-    HomejiaPage
+    HomejiaPage,
+    SeachlistPage,
   ],
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
     IonicStorageModule.forRoot(),
-    HttpClientModule,
+    HttpClientModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -81,6 +102,10 @@ import{HuatijiequPipe} from'./../pipes/huatijiequ.pipe'
     GuanzhuPage,
     FensiPage,
     EditPage,
+    UpPage,
+    HealthDetailPage,
+    LoginPage,
+    RegisterPage,
     HealthDetailPage,
     CooklistPage,
     CooksearchPage,
@@ -88,7 +113,8 @@ import{HuatijiequPipe} from'./../pipes/huatijiequ.pipe'
     HomehottopicPage,
     HomehealthPage,
     TopicdetailPage,
-    HomejiaPage
+    HomejiaPage,
+    SeachlistPage,
   ],
   providers: [
     StatusBar,
@@ -96,6 +122,9 @@ import{HuatijiequPipe} from'./../pipes/huatijiequ.pipe'
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     HealthService,
     CookbookService,
+    HealthService,
+    UsersService,
+    PersonalService
   ]
 })
 export class AppModule {}
