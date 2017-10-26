@@ -20,6 +20,9 @@ import { EditPage } from '../pages/edit/edit';
 import { UpPage } from '../pages/up/up';
 import { LoginPage }from '../pages/login/login'
 import { RegisterPage }from '../pages/register/register'
+import { CaipuPage }from '../pages/caipu/caipu'
+import { PinglunPage }from '../pages/pinglun/pinglun'
+import { ShoucangPage }from '../pages/shoucang/shoucang'
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -47,7 +50,7 @@ import {ZhonghuaPipe} from "../pipes/zhonghua.pipe"
 import {WaiguoPipe} from "../pipes/waiguo.pipe"
 import {HongpeiPipe} from "../pipes/hongpei.pipe"
 import {SearchCooksPipe} from "../pipes/search-cooks.pipe"
-import {CookbookService} from "../providers/cookbook.service"
+
 @NgModule({
   declarations: [
     MyApp,
@@ -62,6 +65,9 @@ import {CookbookService} from "../providers/cookbook.service"
     FensiPage,
     EditPage,
     UpPage,
+    CaipuPage,
+    PinglunPage,
+    ShoucangPage,
     HealthDetailPage,
     LoginPage,
     RegisterPage,
@@ -103,6 +109,9 @@ import {CookbookService} from "../providers/cookbook.service"
     FensiPage,
     EditPage,
     UpPage,
+    CaipuPage,
+    PinglunPage,
+    ShoucangPage,
     HealthDetailPage,
     LoginPage,
     RegisterPage,
