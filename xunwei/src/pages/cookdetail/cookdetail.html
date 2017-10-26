@@ -11,9 +11,6 @@
         <ion-icon name="arrow-back" ></ion-icon>
       </ion-col>
       <ion-col col-4 style="text-align: center"><ion-note>{{cookDetail?.ckname}}</ion-note></ion-col>
-      <ion-col col-4 style="text-align: right">
-        <ion-icon name="more"></ion-icon>
-      </ion-col>
     </ion-row>
   </ion-grid>
 
@@ -26,7 +23,7 @@
   </div>
   <div class="c_c2">
     <h1>{{cookDetail?.ckname}}</h1>
-    <span>2639人收藏　561957人浏览</span>
+    <span style="display:inline-block;padding-bottom: 10px;">2639人收藏</span>
   </div>
   <ion-list style="margin: 0">
     <ion-item>
@@ -34,8 +31,7 @@
         <img src="../../assets/imgs/111.jpg">
       </ion-avatar>
       <h2>大菠萝</h2>
-      <br>
-      <button ion-button clear item-end class="gzbtn">关注</button>
+      <!--<button ion-button clear item-end class="gzbtn">关注</button>-->
     </ion-item>
   </ion-list>
   <!--工艺，口味-->
@@ -45,8 +41,6 @@
         <ion-icon name="ios-flame-outline"></ion-icon> {{cookDetail?.ckgongyi}}</li>
       <li class="args2" alt="口味" >
         <ion-icon name="ios-cafe-outline"></ion-icon>{{cookDetail?.ckkouwei}}</li>
-      <li class="args3" alt="时间">
-        <ion-icon name="ios-clock-outline"></ion-icon>&lt;60分钟</li>
     </ul>
   </div>
   <!--主料辅料-->
@@ -54,59 +48,45 @@
 
     <ion-item-group>
         <ion-item-divider color="light">主料</ion-item-divider>
-        <ion-item>{{cookDetail?.zhuliaoa}}</ion-item>
-        <ion-item>{{cookDetail?.zhuliaob}}</ion-item>
-        <ion-item>{{cookDetail?.zhuliaoc}}</ion-item>
+        <ion-item>{{cookDetail?.zhuliaoa}}&nbsp;&nbsp;&nbsp;&nbsp;{{cookDetail?.zhuliaob}}&nbsp;&nbsp;&nbsp;&nbsp;{{cookDetail?.zhuliaoc}}</ion-item>
     </ion-item-group>
     <ion-item-group>
       <ion-item-divider color="light">辅料</ion-item-divider>
-      <ion-item>{{cookDetail?.fuliaoa}}</ion-item>
-      <ion-item>{{cookDetail?.fuliaoa}}</ion-item>
+      <ion-item>{{cookDetail?.fuliaoa}}&nbsp;&nbsp;&nbsp;&nbsp;{{cookDetail?.fuliaob}}</ion-item>
     </ion-item-group>
   </div>
   <!--步骤-->
   <div >
     <strong class="step_title">做法</strong>
     <ion-card>
-      <ion-card-header>
-         <p>1.{{cookDetail?.ckbuzhoua}}</p>
-      </ion-card-header>
+         <p class="buzoudetail">1.{{cookDetail?.ckbuzhoua}}</p>
       <ion-card-content>
         <img src="../../assets/imgs/cook_detail/{{cookDetail?.ckbzimga}}" alt="">
 
       </ion-card-content>
     </ion-card>
     <ion-card>
-      <ion-card-header>
-        <p>2.{{cookDetail?.ckbuzhoub}}</p>
-      </ion-card-header>
+        <p class="buzoudetail">2.{{cookDetail?.ckbuzhoub}}</p>
       <ion-card-content>
         <img src="../../assets/imgs/cook_detail/{{cookDetail?.ckbzimgb}}" alt="">
-
       </ion-card-content>
     </ion-card>
     <ion-card>
-      <ion-card-header>
-        <p>3.{{cookDetail?.ckbuzhouc}}</p>
-      </ion-card-header>
+        <p class="buzoudetail">3.{{cookDetail?.ckbuzhouc}}</p>
       <ion-card-content>
         <img src="../../assets/imgs/cook_detail/{{cookDetail?.ckbzimgc}}" alt="">
 
       </ion-card-content>
     </ion-card>
     <ion-card>
-      <ion-card-header>
-        <p>4.{{cookDetail?.ckbuzhoud}}</p>
-      </ion-card-header>
+        <p class="buzoudetail">4.{{cookDetail?.ckbuzhoud}}</p>
       <ion-card-content>
         <img src="../../assets/imgs/cook_detail/{{cookDetail?.ckbzimgd}}" alt="">
 
       </ion-card-content>
     </ion-card>
     <ion-card>
-      <ion-card-header>
-        <p>5.{{cookDetail?.ckbuzhoue}}</p>
-      </ion-card-header>
+        <p class="buzoudetail">5.{{cookDetail?.ckbuzhoue}}</p>
       <ion-card-content>
         <img src="../../assets/imgs/cook_detail/{{cookDetail?.ckbzimge}}" alt="">
 
@@ -123,32 +103,29 @@
     </ion-card-content>
   </ion-card>
   <!--评论-->
+
   <ion-card>
-  <ion-card-header>
-    评论
-  </ion-card-header>
+    <ion-card-content>
+      <span style="display: inline-block;width: 100%">评论</span>
+    </ion-card-content>
+  </ion-card>
+
+
+  <ion-card>
   <ion-card-content>
-    <ion-item-group >
+    <ion-item-group>
       <ion-item>
         <ion-avatar item-start>
-          <img src="../../assets/imgs/111.jpg">
+          <img src="./../../assets/home/index1.jpg">
         </ion-avatar>
-        <p>大菠萝</p>
+        <ion-row>
+          <ion-col col-10><span style="display: inline-block; width:100%; font-size: 14px; color: #8e9093;">大菠萝</span></ion-col>
+          <!--<ion-col col-2><span style="display: inline-block; font-size: 15px; width: 100%; color: rgb(253,111,99);">回复</span></ion-col>-->
+        </ion-row>
       </ion-item>
-      <ion-item>
-        <p>好吃</p>
-      </ion-item>
-    </ion-item-group>
-    <ion-item-group style="border-bottom: 1px solid #ccc">
-      <ion-item>
-        <ion-avatar item-start>
-          <img src="../../assets/imgs/111.jpg">
-        </ion-avatar>
-        <p>大菠萝</p>
-      </ion-item>
-      <ion-item>
-        <p>不错</p>
-      </ion-item>
+      <ion-row>
+        <ion-col col-10><span style="display: inline-block; width:100%; font-size: 16px; color: #8e9093;padding: 0px 20px 0px 35px">好吃</span></ion-col>
+      </ion-row>
     </ion-item-group>
   </ion-card-content>
   </ion-card>
