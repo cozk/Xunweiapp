@@ -22,6 +22,7 @@ import {HealthDetailPage} from '../pages/health-detail/health-detail'
 import {CookdetailPage} from '../pages/cookdetail/cookdetail'//菜谱详情页
 import {CooklistPage} from "../pages/cooklist/cooklist"//菜谱列表
 import {CooksearchPage} from "../pages/cooksearch/cooksearch"//菜谱搜索
+import {SeachlistPage} from "../pages/seachlist/seachlist"//搜索结果
 //服务
 import {HttpClientModule} from "@angular/common/http"
 import{HealthService} from '../providers/health.service'
@@ -29,6 +30,11 @@ import{HealthService} from '../providers/health.service'
 import{IndexhotmenuPipe} from'./../pipes/indexhotmenu.pipe'
 import{JiequPipe} from'./../pipes/jiequ.pipe'
 import{HuatijiequPipe} from'./../pipes/huatijiequ.pipe'
+import {JiachangPipe} from "../pipes/jiachang.pipe"
+import {ZhonghuaPipe} from "../pipes/zhonghua.pipe"
+import {WaiguoPipe} from "../pipes/waiguo.pipe"
+import {HongpeiPipe} from "../pipes/hongpei.pipe"
+import {SearchCooksPipe} from "../pipes/search-cooks.pipe"
 import {CookbookService} from "../providers/cookbook.service"
 @NgModule({
   declarations: [
@@ -47,9 +53,14 @@ import {CookbookService} from "../providers/cookbook.service"
     IndexhotmenuPipe,
     JiequPipe,
     HuatijiequPipe,
-    HealthDetailPage,
+    JiachangPipe,//家常
+    ZhonghuaPipe,//中华
+    WaiguoPipe,//外国
+    HongpeiPipe,//烘焙
+    SearchCooksPipe,//搜索
     CooklistPage,
     CooksearchPage,
+    SeachlistPage,
   ],
   imports: [
     BrowserModule,
@@ -73,6 +84,7 @@ import {CookbookService} from "../providers/cookbook.service"
     HealthDetailPage,
     CooklistPage,
     CooksearchPage,
+    SeachlistPage,
   ],
   providers: [
     StatusBar,
