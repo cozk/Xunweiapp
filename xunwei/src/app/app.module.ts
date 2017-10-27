@@ -5,7 +5,12 @@ import { MyApp } from './app.component';
 
 import { AboutPage } from '../pages/about/about';
 import { ContactPage } from '../pages/contact/contact';
+import { HomehotdishPage } from '../pages/homehotdish/homehotdish';
+import { HomehottopicPage } from '../pages/homehottopic/homehottopic';
+import { HomehealthPage } from '../pages/homehealth/homehealth';
+import { HomejiaPage } from '../pages/homejia/homejia';
 import { HomePage } from '../pages/home/home';
+import { TopicdetailPage} from'./../pages/topicdetail/topicdetail'
 import { TabsPage } from '../pages/tabs/tabs';
 import { MePage } from '../pages/me/me';
 import { SettingPage } from '../pages/setting/setting';
@@ -15,6 +20,9 @@ import { EditPage } from '../pages/edit/edit';
 import { UpPage } from '../pages/up/up';
 import { LoginPage }from '../pages/login/login'
 import { RegisterPage }from '../pages/register/register'
+import { CaipuPage }from '../pages/caipu/caipu'
+import { PinglunPage }from '../pages/pinglun/pinglun'
+import { ShoucangPage }from '../pages/shoucang/shoucang'
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -28,6 +36,7 @@ import {SeachlistPage} from "../pages/seachlist/seachlist"//搜索结果
 //服务
 import {HttpClientModule} from "@angular/common/http"
 import{HealthService} from '../providers/health.service'
+import {CookbookService} from "../providers/cookbook.service"
 import{ UsersService } from '../providers/users.service'
 import{ PersonalService } from '../providers/personal.service'
 
@@ -35,13 +44,14 @@ import{ PersonalService } from '../providers/personal.service'
 import{IndexhotmenuPipe} from'./../pipes/indexhotmenu.pipe'
 import{JiequPipe} from'./../pipes/jiequ.pipe'
 import{HuatijiequPipe} from'./../pipes/huatijiequ.pipe'
+
 import {JiachangPipe} from "../pipes/jiachang.pipe"
 import {ZhonghuaPipe} from "../pipes/zhonghua.pipe"
 import {WaiguoPipe} from "../pipes/waiguo.pipe"
 import {HongpeiPipe} from "../pipes/hongpei.pipe"
 import {SearchCooksPipe} from "../pipes/search-cooks.pipe"
-import {CookbookService} from "../providers/cookbook.service"
 import {OrderbyPipe} from "../pipes/orderby.pipe"
+
 @NgModule({
   declarations: [
     MyApp,
@@ -56,6 +66,9 @@ import {OrderbyPipe} from "../pipes/orderby.pipe"
     FensiPage,
     EditPage,
     UpPage,
+    CaipuPage,
+    PinglunPage,
+    ShoucangPage,
     HealthDetailPage,
     LoginPage,
     RegisterPage,
@@ -71,6 +84,11 @@ import {OrderbyPipe} from "../pipes/orderby.pipe"
     OrderbyPipe,//排序
     CooklistPage,
     CooksearchPage,
+    HomehotdishPage,
+    HomehottopicPage,
+    HomehealthPage,
+    TopicdetailPage,
+    HomejiaPage,
     SeachlistPage,
   ],
   imports: [
@@ -93,12 +111,20 @@ import {OrderbyPipe} from "../pipes/orderby.pipe"
     FensiPage,
     EditPage,
     UpPage,
+    CaipuPage,
+    PinglunPage,
+    ShoucangPage,
     HealthDetailPage,
     LoginPage,
     RegisterPage,
     HealthDetailPage,
     CooklistPage,
     CooksearchPage,
+    HomehotdishPage,
+    HomehottopicPage,
+    HomehealthPage,
+    TopicdetailPage,
+    HomejiaPage,
     SeachlistPage,
   ],
   providers: [

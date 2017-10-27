@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, NavParams,AlertController,ToastController,App, ViewController } from 'ionic-angular';
 import { TabsPage } from '../tabs/tabs';
+import { RegisterPage } from '../register/register';
 import { Storage } from '@ionic/storage';
 import { UsersService } from '../../providers/users.service';
 import { FormBuilder, Validators, FormGroup } from '@angular/forms';
@@ -80,4 +81,11 @@ export class LoginPage {
     })
   }
 
+  quxiao(){
+    this.viewCtrl.dismiss();
+  }
+
+  register(){
+    this.navCtrl.push(RegisterPage);
+  }
 }

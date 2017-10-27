@@ -1,0 +1,36 @@
+<div padding style="width: 300px;height: 330px">
+  <ion-item *ngIf="_ping">
+    <div style="text-align: center">
+      <br>
+      <br>
+      <p>赶紧去评论吧</p>
+      <br>
+      <br>
+    </div>
+  </ion-item>
+  <ion-item *ngIf="!_ping">
+    <ion-item *ngIf="_pinglun">
+      <div style="text-align: center">
+        <br>
+        <br>
+        <p>赶紧去评论吧</p>
+        <br>
+        <br>
+      </div>
+    </ion-item>
+
+    <ion-list *ngIf="!_pinglun">
+      <ion-item-sliding *ngFor="let item of items">
+        <ion-item (click)="itemSelected(item)">
+          <div item-start>
+            <ion-label>{{item?.pingluntitle}}</ion-label>
+            <ion-note>{{item?.pingluncontent}}</ion-note>
+          </div>
+        </ion-item>
+
+      </ion-item-sliding>
+    </ion-list>
+
+  </ion-item>
+
+</div>
