@@ -27,7 +27,7 @@ import { ShoucangPage }from '../pages/shoucang/shoucang'
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { IonicStorageModule } from '@ionic/storage';
-
+import {HealthPage} from '../pages/health/health';
 import {HealthDetailPage} from '../pages/health-detail/health-detail'
 import {CookdetailPage} from '../pages/cookdetail/cookdetail'//菜谱详情页
 import {CooklistPage} from "../pages/cooklist/cooklist"//菜谱列表
@@ -72,6 +72,7 @@ import {OrderbyPipe} from "../pipes/orderby.pipe"
     HealthDetailPage,
     LoginPage,
     RegisterPage,
+    HealthPage,
     HealthDetailPage,
     IndexhotmenuPipe,
     JiequPipe,
@@ -117,6 +118,7 @@ import {OrderbyPipe} from "../pipes/orderby.pipe"
     HealthDetailPage,
     LoginPage,
     RegisterPage,
+    HealthPage,
     HealthDetailPage,
     CooklistPage,
     CooksearchPage,
