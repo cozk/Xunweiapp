@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import {IonicPage, NavController, NavParams, ViewController} from 'ionic-angular';
+import {IonicPage, ModalController, NavController, NavParams, ViewController} from 'ionic-angular';
 import {CookbookService} from "../../providers/cookbook.service"
+import {CookdetailPage} from "../cookdetail/cookdetail";
 /**
  * Generated class for the SeachlistPage page.
  *
@@ -21,6 +22,7 @@ export class SeachlistPage {
     public navParams: NavParams,
     private cs: CookbookService,
     public viewCtrl:ViewController,
+    public modalCtrl:ModalController,
 
   ) {
   }
@@ -39,6 +41,17 @@ export class SeachlistPage {
   back() {
     this.viewCtrl.dismiss();
     // this.navCtrl.push(TabsPage);
+  }
+  //点击进入详情页
+  itemSelected(item) {
+    console.log("菜名");
+    console.log(item);
+    let modelPage=this.modalCtrl.create(CookdetailPage,{"_ckname": item});
+    modelPage.onDidDismiss(data => {
+      console.log(data);
+    });
+
+    modelPage.present();
   }
 
 }

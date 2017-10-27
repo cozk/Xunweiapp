@@ -12,7 +12,7 @@
         <ion-icon name="arrow-back" ></ion-icon>
       </ion-col>
       <ion-col col-8 style="text-align: center">
-        <input type="text" value="{{_text}}" name="search" readonly placeholder="搜素菜谱或食材..." id="searchtext">
+        <input type="text" value="{{_text}}" (click)="back()" name="search" readonly placeholder="搜素菜谱或食材..." id="searchtext">
       </ion-col>
       <ion-col col-2 style="text-align: right">
         <button  class="search"  (click)="back()">搜索</button>
@@ -25,7 +25,7 @@
 
 <ion-content >
   <ion-list  no-lines>
-    <ion-item *ngFor="let cook of _result|searchCooks:_text">
+    <ion-item *ngFor="let cook of _result|searchCooks:_text" (click)="itemSelected(cook?.ckname)">
       <ion-thumbnail item-start >
         <img src="../../assets/imgs/cookbook/{{cook?.ckimg}}">
       </ion-thumbnail>
