@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams,ViewController } from 'ionic-angular';
-
+import { Storage } from '@ionic/storage';
 /**
  * Generated class for the FensiPage page.
  *
@@ -15,11 +15,15 @@ import { IonicPage, NavController, NavParams,ViewController } from 'ionic-angula
 })
 export class FensiPage {
 
-  constructor(public navCtrl: NavController, public navParams: NavParams,   public viewCtrl: ViewController,) {
+  constructor(public navCtrl: NavController,
+              public navParams: NavParams,
+              public viewCtrl: ViewController,
+              private storage:Storage,
+  ) {
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad FensiPage');
+
   }
 
   toback() {
