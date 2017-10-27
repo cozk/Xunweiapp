@@ -34,7 +34,7 @@ export class CookbookService {
   getDetailCookbook(title):Promise<any>{
     return this.getAllCookbook().then(data=>{
       for(let item of data){
-        if(item.ckname===title){
+        if(item.ckname==title){
           return item;
         }
       }
@@ -51,7 +51,6 @@ export class CookbookService {
   //     callback(cb);
   //   });
   // }
-
 
 
 }
