@@ -41,6 +41,7 @@ import {WaiguoPipe} from "../pipes/waiguo.pipe"
 import {HongpeiPipe} from "../pipes/hongpei.pipe"
 import {SearchCooksPipe} from "../pipes/search-cooks.pipe"
 import {CookbookService} from "../providers/cookbook.service"
+import {OrderbyPipe} from "../pipes/orderby.pipe"
 @NgModule({
   declarations: [
     MyApp,
@@ -67,6 +68,7 @@ import {CookbookService} from "../providers/cookbook.service"
     WaiguoPipe,//外国
     HongpeiPipe,//烘焙
     SearchCooksPipe,//搜索
+    OrderbyPipe,//排序
     CooklistPage,
     CooksearchPage,
     SeachlistPage,
