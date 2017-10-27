@@ -1,13 +1,13 @@
 import { NgModule } from '@angular/core';
 import { IonicPageModule } from 'ionic-angular';
-import { CaipuPage } from './caipu';
+import { HealthPage } from './health';
 
 @NgModule({
   declarations: [
-    CaipuPage,
+    HealthPage,
   ],
   imports: [
-    IonicPageModule.forChild(CaipuPage),
+    IonicPageModule.forChild(HealthPage),
   ],
 })
-export class CaipuPageModule {}
+export class HealthPageModule {}
