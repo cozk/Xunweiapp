@@ -1,66 +1,65 @@
 <ion-header>
-  <ion-grid>
+  <ion-navbar>
     <ion-row>
-      <ion-col col-4 style="font-size: 25px !important;">
-        <ion-icon name="ios-settings-outline" (click)="toSetting()"></ion-icon>
+      <ion-col col-4 >
+        <ion-icon name="ios-settings-outline" (click)="toSetting()" style="font-size: 25px !important;"></ion-icon>
       </ion-col>
       <ion-col col-4 style="text-align:center ;font-size: 20px !important; ">
         <ion-note style="color: #000">我的</ion-note>
       </ion-col>
-      <ion-col col-4 style="text-align: right;margin-right: -3px; font-size: 27px !important;">
-        <ion-icon name="ios-add-outline" (click)="toUp()"></ion-icon>
+      <ion-col col-4  style="text-align: right ; padding-right: 3px">
+        <ion-icon name="ios-add-outline" (click)="toUp()" style="font-size: 33px !important;"></ion-icon>
       </ion-col>
     </ion-row>
-  </ion-grid>
-
+  </ion-navbar>
 </ion-header>
 
-
 <ion-content padding>
-  <ion-card style="height:120px !important" *ngIf="!_iAmLogin">
-    <ion-item>
-      <ion-avatar item-start>
-        <img src="assets/imgs/1.jpg" style="width: 80px !important; height: 80px !important;">
-      </ion-avatar>
-      <h2 style="margin-top: 1px" (click)="toLogin()">登录/注册</h2>
-      <p>据说登录的人做饭更好吃</p>
-    </ion-item>
-  </ion-card>
-  <ion-card style="height:200px !important" *ngIf="_iAmLogin">
-    <ion-item>
-      <ion-avatar item-start>
-        <img src="assets/imgs/2.jpg" style="width: 80px !important; height: 80px !important;">
-      </ion-avatar>
-      <p class="_p">{{nickname}}</p>
-      <p>&nbsp;&nbsp;{{label}}</p>
-    </ion-item>
-    <br>
-    <hr>
-    <br>
-    <ion-row>
-      <ion-col col-4 style="text-align: center">
-        <div class="_fon" (click)="toGuanzhu()">关注</div>
-        <span>{{guanzhu}}</span>
-      </ion-col>
-      <ion-col col-4 style="text-align: center">
-        <div class="_fon" (click)="toFensi()">粉丝</div>
-        <span>{{fensi}}</span>
-      </ion-col>
-      <ion-col col-4 style="text-align: center">
-        <ion-icon name="ios-leaf-outline"></ion-icon>
-        <div class="_fon" (click)="toMydata()">我的资料</div>
-      </ion-col>
-    </ion-row>
-  </ion-card>
+    <ion-card style="height:200px !important" *ngIf="!_iAmLogin">
+      <ion-item >
+        <ion-avatar item-start>
+          <img src="assets/imgs/2.jpg" style="width: 80px !important; height: 80px !important;">
+        </ion-avatar>
+        <h2 style="margin-top: 1px" (click)="toLogin()">登录/注册</h2>
+        <p>据说登录的人做饭更好吃</p>
+      </ion-item>
+    </ion-card>
 
+  <br>
+
+    <ion-card style="height:200px !important" *ngIf="_iAmLogin">
+      <ion-item>
+        <ion-avatar item-start>
+          <img src="assets/imgs/3.jpg" style="width: 80px !important; height: 80px !important;">
+        </ion-avatar>
+        <p class="_p">{{nickname}}</p>
+        <p>&nbsp;&nbsp;{{label}}</p>
+      </ion-item>
+      <br>
+      <hr>
+      <ion-row>
+        <ion-col col-4 style="text-align: center">
+          <div class="_fon" (click)="toGuanzhu()">关注</div>
+          <span>{{guanzhu}}</span>
+        </ion-col>
+        <ion-col col-4 style="text-align: center">
+          <div class="_fon" (click)="toFensi()">粉丝</div>
+          <span>{{fensi}}</span>
+        </ion-col>
+        <ion-col col-4 style="text-align: center">
+          <ion-icon name="ios-leaf-outline"></ion-icon>
+          <div class="_fon" (click)="toMydata()">我的资料</div>
+        </ion-col>
+      </ion-row>
+    </ion-card>
 
   <ion-row>
     <ion-segment [(ngModel)]="kinds" color="dark">
       <ion-segment-button value="caipu">
-        <span class="_span">菜谱</span>
+        <span class="_span"  >菜谱</span>
       </ion-segment-button>
       <ion-segment-button value="pinglun">
-        <span class="_span">评论</span>
+        <span class="_span"  >评论</span>
       </ion-segment-button>
       <ion-segment-button value="shoucang">
         <span class="_span">收藏</span>
@@ -68,143 +67,25 @@
     </ion-segment>
   </ion-row>
 
+    <div padding (swipe)="swipeEvent($event)">
+      <div [ngSwitch]="kinds">
 
-  <div padding (swipe)="swipeEvent($event)">
-    <div [ngSwitch]="kinds">
-      <ion-list *ngSwitchCase="'caipu'">
-        <ion-item>
-          <div *ngIf="_cai" style="text-align: center">
-            <br>
-            <br>
-            <p>据说创作菜谱的人工资都涨了79%</p>
-            <br>
-            <br>
-            <button class="_button" (click)="toUp()">开始创作菜谱</button>
-            <br>
-          </div>
+        <ion-list *ngSwitchCase="'caipu'">
+          <page-caipu></page-caipu>
+        </ion-list>
 
-          <div *ngIf="!_cai">
-            <div *ngIf="_caipu" style="text-align: center">
-              <br>
-              <br>
-              <p>据说创作菜谱的人工资都涨了79%</p>
-              <br>
-              <br>
-              <button class="_button" (click)="toUp()">开始创作菜谱</button>
-              <br>
-            </div>
-            <div *ngIf="!_caipu">
-              <ion-list no-lines>
-                <ion-item-sliding *ngFor="let item of items">
-                  <ion-item (click)="itemSelected(item)">
-                    <ion-avatar item-start>
-                      <img src="{{item?.cookimg}}">
-                    </ion-avatar>
-                    <div item-start>
-                      <ion-label>{{item?.biaoti}}</ion-label>
-                      <ion-note>{{item?.name}}</ion-note>
-                    </div>
-                  </ion-item>
 
-                  <ion-item-options side="right">
-                    <button ion-button color="danger" (click)="deleteById(item.telephone)">
-                      <ion-icon name="delete"></ion-icon>
-                      Delete
-                    </button>
-                  </ion-item-options>
-                </ion-item-sliding>
-              </ion-list>
-            </div>
-            <br><br>
-          </div>
-        </ion-item>
-      </ion-list>
-      <!--<ion-infinite-scroll (ionInfinite)="$event.waitFor(doInfinite($event))">-->
-      <!--<ion-infinite-scroll-content-->
-      <!--loadingSpinner="bubbles"-->
-      <!--loadingText="Loading more data..."></ion-infinite-scroll-content>-->
-      <!--</ion-infinite-scroll>-->
+        <ion-list *ngSwitchCase="'pinglun'">
+          <page-pinglun></page-pinglun>
+         </ion-list>
 
-      <ion-list *ngSwitchCase="'pinglun'">
-        <ion-item>
-          <div *ngIf="_ping" style="text-align: center">
-            <br>
-            <br>
-            <p>赶紧去评论吧</p>
-            <br>
-            <br>
-          </div>
-          <div *ngIf="!_ping">
-            <div *ngIf="_pinglun" style="text-align: center">
-              <br>
-              <br>
-              <p>赶紧去评论吧</p>
-              <br>
-              <br>
-            </div>
-            <div *ngIf="!_pinglun">
-              <ion-list no-lines>
-                <ion-item-sliding *ngFor="let item of items">
-                  <ion-item (click)="itemSelected(item)">
-                    <ion-avatar item-start>
-                      <img src="{{item?.icon_url}}">
-                    </ion-avatar>
-                    <div item-start>
-                      <ion-label>{{item?.name}}</ion-label>
-                      <ion-note>{{item?.salary}}</ion-note>
-                    </div>
-                    <ion-note item-end>{{item?.city_name}}</ion-note>
-                  </ion-item>
-                  <ion-item-options side="right">
-                    <button ion-button color="danger" (click)="deleteById(item.postId)">
-                      <ion-icon name="delete"></ion-icon>
-                      Delete
-                    </button>
-                  </ion-item-options>
-                </ion-item-sliding>
-              </ion-list>
-            </div>
-          </div>
-        </ion-item>
-      </ion-list>
+        <ion-list *ngSwitchCase="'shoucang'">
+         <page-shoucang></page-shoucang>
+        </ion-list>
 
-      <ion-list *ngSwitchCase="'shoucang'">
-        <ion-item>
-          <div *ngIf="_caipu" style="text-align: center">
-            <br>
-            <br>
-            <p>快快收藏自己心爱的作品吧</p>
-            <br>
-            <br>
-          </div>
 
-          <div *ngIf="!_shoucang">
-            <ion-list no-lines>
-              <ion-item-sliding *ngFor="let item of items">
-                <ion-item (click)="itemSelected(item)">
-                  <ion-avatar item-start>
-                    <img src="{{item?.icon_url}}">
-                  </ion-avatar>
-                  <div item-start>
-                    <ion-label>{{item?.name}}</ion-label>
-                    <ion-note>{{item?.salary}}</ion-note>
-                  </div>
 
-                  <ion-note item-end>{{item?.city_name}}</ion-note>
 
-                </ion-item>
-
-                <ion-item-options side="right">
-                  <button ion-button color="danger" (click)="deleteById(item.postId)">
-                    <ion-icon name="delete"></ion-icon>
-                    Delete
-                  </button>
-                </ion-item-options>
-              </ion-item-sliding>
-            </ion-list>
-          </div>
-        </ion-item>
-      </ion-list>
+      </div>
     </div>
-  </div>
 </ion-content>

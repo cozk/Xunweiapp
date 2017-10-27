@@ -2,6 +2,9 @@ page-cooklist {
   [col-4] {
     font-size: 2rem;
   }
+  .note-ios {
+    color: #333;
+  }
   ul{
     list-style: none;
     padding: 0;
@@ -11,17 +14,14 @@ page-cooklist {
     padding-left: 20px;
     float: left;
   }
-  .button-outline-ios{
-    border: 0;
-
+  .segment-md .segment-button,.segment-ios .segment-button{
+    color: #333;
+    font-size: 1.6rem;
+    border-color: transparent;
   }
-  .button-outline-ios:active{
+  .segment-md .segment-button.segment-activated, .segment-ios .segment-button.segment-activated{
     background: #ccc;
     color: #333;
-  }
-  .button-ios{
-    height: 2rem;
-    width: 4rem;
   }
   .list-ios {
     margin: 0px 0 32px;

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams,ViewController } from 'ionic-angular';
-
+import {IonicPage, ModalController, NavController, NavParams, ViewController} from 'ionic-angular';
+import {SeachlistPage} from "../seachlist/seachlist"
 /**
  * Generated class for the CooksearchPage page.
  *
@@ -14,11 +14,20 @@ import { IonicPage, NavController, NavParams,ViewController } from 'ionic-angula
   templateUrl: 'cooksearch.html',
 })
 export class CooksearchPage {
-
+  hotSearch=[
+    {'hs':'家常菜'},
+    {'hs':'苏菜'},
+    {'hs':'甜品点心'},
+    {'hs':'鱼'},
+    {'hs':'牛肉'},
+    {'hs':'鸡'},
+  ];
   constructor(
     public navCtrl: NavController,
     public navParams: NavParams,
     public viewCtrl:ViewController,
+    public modalCtrl:ModalController,
+
 
   ) {
   }
@@ -30,6 +39,14 @@ export class CooksearchPage {
   back() {
     this.viewCtrl.dismiss();
     // this.navCtrl.push(TabsPage);
+  }
+  toSearchList(text){
+    let modelPage=this.modalCtrl.create(SeachlistPage,{"_sText": text});
+    modelPage.onDidDismiss(data => {
+      console.log(data);
+    });
+
+    modelPage.present();
   }
 
 }

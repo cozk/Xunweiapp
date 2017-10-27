@@ -2,6 +2,9 @@ page-cookdetail {
   ion-header{
     font-size: 2rem;
   }
+  .note-ios {
+    color: #333;
+  }
   h1{
     margin: 0;
   }
@@ -34,17 +37,18 @@ page-cookdetail {
     text-align: justify;
   }
   .gzbtn {
-    height: 26px;
+
     display: inline-block;
     position: absolute;
     right: 20px;
-    top: 16px;
+    top: 5px;
     border: 1px solid #ff4c39;
-    line-height: 26px;
-    font-size: 14px;
+
+    font-size: 16px;
+    padding:5px;
     color: #ff4c39;
-    padding: 0px 15px;
-    border-radius: 14px;
+
+    border-radius: 6px;
   }
   //工艺口味
   .c_c5 {
@@ -54,7 +58,7 @@ page-cookdetail {
     position: relative;
   }
   .argsul{
-    padding: 20px 0;
+    padding: 10px 0;
   }
   .c_c5 .argsul li {
     width: 40%;
@@ -63,12 +67,16 @@ page-cookdetail {
     box-sizing: border-box;
     height: 24px;
     line-height: 24px;
-    padding: 4px 20px 4px 16px;
+    padding: 0px 20px 0px 16px;
     font-size: 16px;
     color: #666;
     font-weight: 400;
   }
 //做法步骤
+  .buzoudetail{
+    margin-top: 5px;
+    padding: 0px 20px 0px 20px;
+  }
   .step_title {
     height: 44px;
     line-height: 44px;

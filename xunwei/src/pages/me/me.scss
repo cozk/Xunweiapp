@@ -4,10 +4,10 @@ page-me {
     color:#000;
   }
   ._bor{
-    width: 20px;
-    height: 20px;
-    border: 1px red solid;
-  }
+      width: 20px;
+      height: 20px;
+      border: 1px red solid;
+    }
   ._fon{
     font-size: 16px;
   }
@@ -19,5 +19,29 @@ page-me {
     height: 40px;
     background: #fff;
     border:1px solid #000;
+  }
+  ._kind{
+    width: 100%;
+    list-style: none;
+    //border: 1px red solid;
+  }
+   li{
+     float: left;
+     font-size: 17px;
+     text-align: center;
+     border: 1px solid black;
+     padding: 3px 5px 3px 5px;
+  }
+  #li1{
+    width: 33.3%;
+    margin-left: -7%;
+    color:white;
+    background: black;
+  }
+  #li2{
+    width: 33.3%;
+  }
+  #li3{
+    width: 33.3%;
   }
 }

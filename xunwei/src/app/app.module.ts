@@ -5,7 +5,12 @@ import { MyApp } from './app.component';
 
 import { AboutPage } from '../pages/about/about';
 import { ContactPage } from '../pages/contact/contact';
+import { HomehotdishPage } from '../pages/homehotdish/homehotdish';
+import { HomehottopicPage } from '../pages/homehottopic/homehottopic';
+import { HomehealthPage } from '../pages/homehealth/homehealth';
+import { HomejiaPage } from '../pages/homejia/homejia';
 import { HomePage } from '../pages/home/home';
+import { TopicdetailPage} from'./../pages/topicdetail/topicdetail'
 import { TabsPage } from '../pages/tabs/tabs';
 import { MePage } from '../pages/me/me';
 import { SettingPage } from '../pages/setting/setting';
@@ -19,15 +24,22 @@ import { RegisterPage }from '../pages/register/register'
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { IonicStorageModule } from '@ionic/storage';
-
+//健康
 import {HealthPage} from '../pages/health/health';
 import {HealthDetailPage} from '../pages/health-detail/health-detail'
+//菜谱
 import {CookdetailPage} from '../pages/cookdetail/cookdetail'//菜谱详情页
 import {CooklistPage} from "../pages/cooklist/cooklist"//菜谱列表
 import {CooksearchPage} from "../pages/cooksearch/cooksearch"//菜谱搜索
+import {SeachlistPage} from "../pages/seachlist/seachlist"//搜索结果
+import { CaipuPage }from '../pages/caipu/caipu'
+import { PinglunPage }from '../pages/pinglun/pinglun'
+import { ShoucangPage }from '../pages/shoucang/shoucang'
+
 //服务
 import {HttpClientModule} from "@angular/common/http"
 import{HealthService} from '../providers/health.service'
+import {CookbookService} from "../providers/cookbook.service"
 import{ UsersService } from '../providers/users.service'
 import{ PersonalService } from '../providers/personal.service'
 
@@ -35,12 +47,13 @@ import{ PersonalService } from '../providers/personal.service'
 import{IndexhotmenuPipe} from'./../pipes/indexhotmenu.pipe'
 import{JiequPipe} from'./../pipes/jiequ.pipe'
 import{HuatijiequPipe} from'./../pipes/huatijiequ.pipe'
-import {CookbookService} from '../providers/cookbook.service'
-import {HealthCommonPipe} from '../pipes/health-common.pipe'
-import {HealthSafetyPipe} from '../pipes/health-safety.pipe'
-import {HealthStoryPipe} from '../pipes/health-story.pipe'
-import {HealthTabooPipe} from '../pipes/health-taboo.pipe'
-import {HealthTeaPipe} from '../pipes/health-tea.pipe'
+
+import {JiachangPipe} from "../pipes/jiachang.pipe"
+import {ZhonghuaPipe} from "../pipes/zhonghua.pipe"
+import {WaiguoPipe} from "../pipes/waiguo.pipe"
+import {HongpeiPipe} from "../pipes/hongpei.pipe"
+import {SearchCooksPipe} from "../pipes/search-cooks.pipe"
+
 @NgModule({
   declarations: [
     MyApp,
@@ -49,28 +62,37 @@ import {HealthTeaPipe} from '../pipes/health-tea.pipe'
     HomePage,
     TabsPage,
     MePage,
-    CookdetailPage,
     SettingPage,
     GuanzhuPage,
     FensiPage,
     EditPage,
     UpPage,
+
     HealthPage,
     HealthDetailPage,
+
+    CookdetailPage,
+    CooklistPage,
+    CooksearchPage,
+    CaipuPage,
+    PinglunPage,
+    ShoucangPage,
     LoginPage,
     RegisterPage,
-    HealthDetailPage,
     IndexhotmenuPipe,
     JiequPipe,
     HuatijiequPipe,
-    HealthDetailPage,
-    CooklistPage,
-    CooksearchPage,
-    HealthCommonPipe,
-    HealthSafetyPipe,
-    HealthStoryPipe,
-    HealthTabooPipe,
-    HealthTeaPipe
+    JiachangPipe,//家常
+    ZhonghuaPipe,//中华
+    WaiguoPipe,//外国
+    HongpeiPipe,//烘焙
+    SearchCooksPipe,//搜索
+    HomehotdishPage,
+    HomehottopicPage,
+    HomehealthPage,
+    TopicdetailPage,
+    HomejiaPage,
+    SeachlistPage,
   ],
   imports: [
     BrowserModule,
@@ -93,12 +115,21 @@ import {HealthTeaPipe} from '../pipes/health-tea.pipe'
     EditPage,
     UpPage,
     HealthPage,
+    CaipuPage,
+    PinglunPage,
+    ShoucangPage,
     HealthDetailPage,
     LoginPage,
     RegisterPage,
     HealthDetailPage,
     CooklistPage,
     CooksearchPage,
+    HomehotdishPage,
+    HomehottopicPage,
+    HomehealthPage,
+    TopicdetailPage,
+    HomejiaPage,
+    SeachlistPage,
   ],
   providers: [
     StatusBar,

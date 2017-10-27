@@ -1,4 +1,10 @@
 page-about {
+  [col-4] {
+    font-size: 2rem;
+  }
+  .note-ios {
+    color: #333;
+  }
   .toolbar-ios .segment-button{
     max-width: 100%;
     font-size: 1.5rem;
@@ -25,11 +31,11 @@ page-about {
   li{
     float: left;
   }
-  .button-outline-ios{
+  .button-outline-ios,.button-outline-md{
     border: 0;
 
   }
-  .button-outline-ios:active{
+  .button-outline-ios.activated{
     background: #ccc;
     color: #333;
   }

@@ -13,26 +13,15 @@ export class PersonalService {
 
 
 
-  work():Promise<any>{
-    // return this.http.post(this.url+'/work',user).toPromise().then((data)=> data
-    // )
-    return this.storage.ready().then(()=>{
-      return this.storage.get('token').then(val=>{
-        let _head=new HttpHeaders({"token":val});
-        return this.http.get(this.url+'/work',{headers:_head}).toPromise().then(data=>{
-          return data;
-        });
-      });
-    });
+  work(user):Promise<any>{
+    return this.http.post(this.url+'/work',user).toPromise().then((data)=> data
+    )
+  }
+
+  comm(user):Promise<any>{
+    return this.http.post(this.url+'/comm',user).toPromise().then((data)=> data
+    )
   }
 
 
-  // comm(user,callback){
-  //   this.http.post(this.url+'/comm',user).subscribe(function (result) {//subscribe（）异步处理，如果需要用返回的数据，最好把方法写在里面。
-  //       callback(result);
-  //     },
-  //     function (error) {
-  //       console.log(error.message);
-  //     })
-  // }
 }
