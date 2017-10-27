@@ -2,7 +2,21 @@ page-about {
   [col-4] {
     font-size: 2rem;
   }
-  .note-ios {
+  [col-6]{
+    padding: 0;
+  }
+  .toolbar-background-md,.toolbar-background-ios {
+    border-color: #fff;
+    background: #fff;
+  }
+  .card-content-ios,.card-content-md {
+    line-height: 1rem;
+    height: 3rem;
+  }
+  .grid{
+    padding: 0;
+  }
+  .note-ios,.note-md {
     color: #333;
   }
   .toolbar-ios .segment-button{
@@ -31,14 +45,22 @@ page-about {
   li{
     float: left;
   }
+  .button-ios:hover{
+    background-color: #2ec95c;
+    color: #fff;
+  }
   .button-outline-ios,.button-outline-md{
     border: 0;
 
   }
-  .button-outline-ios.activated{
-    background: #ccc;
-    color: #333;
+  .button-outline-md-dark:hover:not(.disable-hover) {
+    background-color: #32db64;
+    color: #fff;
   }
+  //.button-outline-ios.activated{
+  //  background: #ccc;
+  //  color: #333;
+  //}
   .button-ios,.button-md{
     height: 2rem;
     width: 4rem;
@@ -46,4 +68,5 @@ page-about {
   [col-6] {
     font-size: 1.5rem;
   }
+
 }
