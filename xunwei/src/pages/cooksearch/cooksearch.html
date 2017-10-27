@@ -1,0 +1,34 @@
+<!--
+  Generated template for the CooksearchPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col col-2 (click)="back()" >
+        <ion-icon name="arrow-back" ></ion-icon>
+      </ion-col>
+      <ion-col col-8 style="text-align: center">
+        <ion-searchbar
+          [(ngModel)]="myInput"
+          [showCancelButton]="shouldShowCancel"
+          (ionInput)="onInput($event)"
+          (ionCancel)="onCancel($event)"
+          placeholder="搜索你感兴趣的">
+        </ion-searchbar>
+      </ion-col>
+      <ion-col col-2 style="text-align: right">
+        搜索
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-header>
+
+
+<ion-content padding>
+
+</ion-content>

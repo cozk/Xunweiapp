@@ -1,17 +1,78 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>Home</ion-title>
+    <ion-grid>
+      <ion-row>
+        <ion-col col-2 style="text-align: center">
+          <ion-icon name="add" style="font-size:35px;"></ion-icon>
+        </ion-col>
+        <ion-col col-9>
+          <input type="text" placeholder="搜素菜谱或食材..." id="searchtext">
+        </ion-col>
+      </ion-row>
+      <ion-slides autoplay="2000" loop="true" (ionSlideDidChange)="slideChanged()" #slides>
+        <ion-slide *ngFor="let item of imgs" >
+          <img src="assets/home/{{item}}" alt="图片飞到外星球去了~~~" >
+        </ion-slide>
+
+      </ion-slides>
+      <ion-row>
+        <div id="healthyfood">
+          <span id="p1">节气&nbsp;|&nbsp;霜降</span><br>
+          <span id="p2">祛寒降燥防秋郁</span>
+        </div>
+        <div id="topactivity">
+          <span class="p3">官方</span><br>
+          <span class="p4">活动</span>
+        </div>
+        <div id="postdish">
+          <span class="p3">发布</span><br>
+          <span class="p4">菜谱</span>
+        </div>
+      </ion-row>
+    </ion-grid>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  <h2>Welcome to Ionic!</h2>
-  <p>
-    This starter project comes with simple tabs-based layout for apps
-    that are going to primarily use a Tabbed UI.
-  </p>
-  <p>
-    Take a look at the <code>src/pages/</code> directory to add or change tabs,
-    update any existing page or create new pages.
-  </p>
+  <div class="parttop">
+    <span class="contentsp1">热门菜谱</span>
+    <span class="contentsp2">更多</span>
+  </div>
+
+  <div class="hotmenu" *ngFor="let hotm of allhotmenu ">
+    <img src="assets/home/{{hotm?.ckimg}}" height="140px" width="100%"/>
+    <div class="card-title">{{hotm?.ckname}}</div>
+    <div class="card-subtitle">{{hotm?.ckkouwei}}</div>
+  </div>
+
+
+  <div class="part">
+    <span class="contentsp1">推荐话题</span>
+    <span class="contentsp2">更多</span>
+  </div>
+  <div class="card" *ngFor="let topic of allhottopic ">
+    <div class="cardimg">
+      <img src="assets/home/index2.jpg" height="150px" width="100%">
+    </div>
+    <div class="cardwords">
+      <h3 style=" margin-top: 20px;">{{topic?.title | jiequ}}</h3>
+      <p style="font-size:15px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{topic?.detail | huatijiequ}}</p>
+    </div>
+  </div>
+
+
+
+  <div class="part">
+    <span class="contentsp1">健康新闻</span>
+    <span class="contentsp2">更多</span>
+  </div>
+  <div class="card" *ngFor="let health of allhealth ">
+    <div class="cardimg">
+      <img src="assets/home/index3.jpg" height="150px" width="100%">
+    </div>
+    <div class="cardwords">
+      <h3 style="margin-left:30px; margin-top: 20px;">{{health.healthtitle}}</h3>
+      <p style="padding:0px 30px 0px 30px">{{health.healthp1}}</p>
+    </div>
+  </div>
 </ion-content>
