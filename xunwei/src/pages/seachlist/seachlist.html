@@ -1,0 +1,38 @@
+<!--
+  Generated template for the SeachlistPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col col-2 (click)="back()" >
+        <ion-icon name="arrow-back" ></ion-icon>
+      </ion-col>
+      <ion-col col-8 style="text-align: center">
+        <input type="text" value="{{_text}}" (click)="back()" name="search" readonly placeholder="搜素菜谱或食材..." id="searchtext">
+      </ion-col>
+      <ion-col col-2 style="text-align: right">
+        <button  class="search"  (click)="back()">搜索</button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-header>
+
+
+<ion-content >
+  <ion-list  no-lines>
+    <ion-item *ngFor="let cook of _result|searchCooks:_text" (click)="itemSelected(cook?.ckname)">
+      <ion-thumbnail item-start >
+        <img src="../../assets/imgs/cookbook/{{cook?.ckimg}}">
+      </ion-thumbnail>
+      <h2>{{cook?.ckname}}</h2>
+      <p>大菠萝</p>
+      <p>工艺:{{cook?.ckgongyi}}
+        口味:{{cook?.ckkouwei}}</p>
+    </ion-item>
+  </ion-list>
+</ion-content>
