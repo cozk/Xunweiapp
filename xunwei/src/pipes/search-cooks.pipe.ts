@@ -17,5 +17,4 @@ export class SearchCooksPipe implements PipeTransform {
     }
   }
 
-
 }
