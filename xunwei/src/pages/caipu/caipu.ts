@@ -3,6 +3,9 @@ import { IonicPage, NavController, NavParams,ModalController } from 'ionic-angul
 import { PersonalService } from '../../providers/personal.service';
 import { Storage } from '@ionic/storage';
 import { CookdetailPage } from'../cookdetail/cookdetail';
+import { UpPage } from'../up/up';
+import { LoginPage } from'../login/login';
+
 /**
  * Generated class for the CaipuPage page.
  *
@@ -59,5 +62,18 @@ export class CaipuPage implements OnInit{
   itemSelected(item) {
     let modelPage=this.modalCtrl.create(CookdetailPage ,{"_ckname":item.biaoti})
     modelPage.present();
+  }
+
+  toUp(){
+    this.storage.ready().then(() => {
+      this.storage.get('isLogin').then((val) => {
+        if (val) {
+          this.navCtrl.push(UpPage);
+        }
+        else{
+          this.navCtrl.push(LoginPage);
+        }
+      })
+    })
   }
 }
