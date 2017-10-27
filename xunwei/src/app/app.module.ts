@@ -35,12 +35,6 @@ import {CookdetailPage} from '../pages/cookdetail/cookdetail'//菜谱详情页
 import {CooklistPage} from "../pages/cooklist/cooklist"//菜谱列表
 import {CooksearchPage} from "../pages/cooksearch/cooksearch"//菜谱搜索
 import {SeachlistPage} from "../pages/seachlist/seachlist"//搜索结果
-import {JiachangPipe} from "../pipes/jiachang.pipe"
-import {ZhonghuaPipe} from "../pipes/zhonghua.pipe"
-import {WaiguoPipe} from "../pipes/waiguo.pipe"
-import {HongpeiPipe} from "../pipes/hongpei.pipe"
-import {SearchCooksPipe} from "../pipes/search-cooks.pipe"
-import {OrderbyPipe} from "../pipes/orderby.pipe"
 //服务
 import {HttpClientModule} from "@angular/common/http"
 import{HealthService} from '../providers/health.service'
@@ -53,7 +47,12 @@ import{IndexhotmenuPipe} from'./../pipes/indexhotmenu.pipe'
 import{JiequPipe} from'./../pipes/jiequ.pipe'
 import{HuatijiequPipe} from'./../pipes/huatijiequ.pipe'
 
-
+import {JiachangPipe} from "../pipes/jiachang.pipe"
+import {ZhonghuaPipe} from "../pipes/zhonghua.pipe"
+import {WaiguoPipe} from "../pipes/waiguo.pipe"
+import {HongpeiPipe} from "../pipes/hongpei.pipe"
+import {SearchCooksPipe} from "../pipes/search-cooks.pipe"
+import {OrderbyPipe} from "../pipes/orderby.pipe"
 
 @NgModule({
   declarations: [
@@ -63,6 +62,7 @@ import{HuatijiequPipe} from'./../pipes/huatijiequ.pipe'
     HomePage,
     TabsPage,
     MePage,
+    CookdetailPage,
     SettingPage,
     GuanzhuPage,
     FensiPage,
@@ -73,26 +73,25 @@ import{HuatijiequPipe} from'./../pipes/huatijiequ.pipe'
     ShoucangPage,
     LoginPage,
     RegisterPage,
+    HealthPage,
+    HealthDetailPage,
     IndexhotmenuPipe,
     JiequPipe,
     HuatijiequPipe,
-    HealthPage,
-    HealthDetailPage,
-    CookdetailPage,
-    CooklistPage,
-    CooksearchPage,
-    SeachlistPage,
     JiachangPipe,//家常
     ZhonghuaPipe,//中华
     WaiguoPipe,//外国
     HongpeiPipe,//烘焙
     SearchCooksPipe,//搜索
     OrderbyPipe,//排序
+    CooklistPage,
+    CooksearchPage,
     HomehotdishPage,
     HomehottopicPage,
     HomehealthPage,
     TopicdetailPage,
     HomejiaPage,
+    SeachlistPage,
   ],
   imports: [
     BrowserModule,
@@ -117,6 +116,7 @@ import{HuatijiequPipe} from'./../pipes/huatijiequ.pipe'
     CaipuPage,
     PinglunPage,
     ShoucangPage,
+    HealthDetailPage,
     LoginPage,
     RegisterPage,
     HealthPage,
