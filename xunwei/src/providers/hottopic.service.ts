@@ -4,8 +4,8 @@ import {HttpClient} from '@angular/common/http';
 import 'rxjs/add/operator/toPromise';
 @Injectable()
 export class HottopicService {
-  // url:string='http://101.132.140.182:3000/forum';
-  url:string='http://127.0.0.1:3000/forum';
+  url:string='http://101.132.140.182:3000/forum';
+  // url:string='http://127.0.0.1:3000/forum';
   constructor(
     private http:HttpClient
   ) {}
@@ -17,7 +17,7 @@ export class HottopicService {
   //   });
   // }
   getAllHottopic():Promise<any>{
-    return this.http.get(this.url+'/hot').toPromise().then((data)=> data
+    return this.http.get(this.url).toPromise().then((data)=> data
     )
   }
 

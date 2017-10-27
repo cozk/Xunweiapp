@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams,ViewController } from 'ionic-angular';
 import { LoginPage } from '../login/login';
+import {TabsPage} from '../tabs/tabs';
 import { Storage } from '@ionic/storage';
 @IonicPage()
 @Component({
@@ -29,7 +30,7 @@ export class SettingPage {
       this.storage.remove('isLogin');
     });
     this.viewCtrl.dismiss();
-    this.navCtrl.push(LoginPage);
+    this.navCtrl.push(TabsPage);
   }
 
 }

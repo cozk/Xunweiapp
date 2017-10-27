@@ -27,8 +27,10 @@ import { ShoucangPage }from '../pages/shoucang/shoucang'
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { IonicStorageModule } from '@ionic/storage';
+//健康
 import {HealthPage} from '../pages/health/health';
 import {HealthDetailPage} from '../pages/health-detail/health-detail'
+//菜谱
 import {CookdetailPage} from '../pages/cookdetail/cookdetail'//菜谱详情页
 import {CooklistPage} from "../pages/cooklist/cooklist"//菜谱列表
 import {CooksearchPage} from "../pages/cooksearch/cooksearch"//菜谱搜索
@@ -69,7 +71,6 @@ import {OrderbyPipe} from "../pipes/orderby.pipe"
     CaipuPage,
     PinglunPage,
     ShoucangPage,
-    HealthDetailPage,
     LoginPage,
     RegisterPage,
     HealthPage,
@@ -133,7 +134,6 @@ import {OrderbyPipe} from "../pipes/orderby.pipe"
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    HealthService,
     CookbookService,
     HealthService,
     UsersService,
