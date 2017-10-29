@@ -15,8 +15,9 @@
 
 
 <ion-content padding>
-  <div class="hotmenu" *ngFor="let hotm of allhotmenus ">
-    <img src="assets/home/{{hotm?.ckimg}}" height="140px" width="100%"/>
+  <div class="hotmenu"  *ngFor="let hotm of allhotmenus ">
+    <div style="position: absolute;width: 100%;height: 140px; z-index: 2;background-color: rgba(255,255,255,0);" (click)="menuSelected(hotm?.ckname)"></div>
+    <img  src="assets/home/{{hotm?.ckimg}}" height="140px" width="100%" />
     <div class="card-title">{{hotm?.ckname}}</div>
     <div class="card-subtitle">{{hotm?.ckkouwei}}</div>
   </div>

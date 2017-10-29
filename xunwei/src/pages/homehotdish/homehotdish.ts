@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams,ViewController } from 'ionic-angular';
+import { IonicPage, NavController, NavParams,ViewController ,ModalController} from 'ionic-angular';
 import {IndexService} from './../../providers/index.service';
+import {CookdetailPage} from "../cookdetail/cookdetail";
 /**
  * Generated class for the HomehotdishPage page.
  *
@@ -22,7 +23,8 @@ export class HomehotdishPage {
     public navCtrl: NavController,
     public navParams: NavParams,
     public is:IndexService,
-    public ViewCtrl: ViewController
+    public ViewCtrl: ViewController,
+    public modalCtrl: ModalController
   ) {
   }
 
@@ -36,6 +38,16 @@ export class HomehotdishPage {
 
   back() {
     this.ViewCtrl.dismiss();
+  }
+
+
+  //点击菜谱进入详情页
+  menuSelected(item) {
+    let modelPage=this.modalCtrl.create(CookdetailPage,{"_ckname": item});
+    modelPage.onDidDismiss(data => {
+      console.log(data);
+    });
+    modelPage.present();
   }
 
 

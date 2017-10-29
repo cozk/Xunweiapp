@@ -5,7 +5,7 @@
         <ion-col col-2 style="text-align: center" (click)="toadd()">
           <ion-icon name="add" style="font-size:35px;"></ion-icon>
         </ion-col>
-        <ion-col col-9>
+        <ion-col col-9  (click)="toSearch()">
           <input type="text" placeholder="搜素菜谱或食材..." id="searchtext">
         </ion-col>
       </ion-row>
@@ -38,8 +38,9 @@
     <span class="contentsp1">热门菜谱</span>
     <span class="contentsp2" (click)="tomenu()">更多</span>
   </div>
-
-  <div class="hotmenu" *ngFor="let hotm of allhotmenu ">
+<div style="clear: both;"></div>
+  <div class="hotmenu" *ngFor="let hotm of allhotmenu " >
+    <div style="position: absolute;width: 100%;height: 140px; z-index: 2;background-color: rgba(255,255,255,0);" (click)="menuSelected(hotm?.ckname)"></div>
     <img src="assets/home/{{hotm?.ckimg}}" height="140px" width="100%"/>
     <div class="card-title">{{hotm?.ckname}}</div>
     <div class="card-subtitle">{{hotm?.ckkouwei}}</div>
@@ -75,4 +76,5 @@
       <p style="font-size:16px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{health.healthp1|huatijiequ}}</p>
     </div>
   </div>
+  <span style="display:inline-block; width:100%;margin-top: 30px;text-align: center; font-size: 14px; border-top: 1px solid gainsboro;padding-top: 20px; color: #4d4d4d;">已经到底了~~~</span>
 </ion-content>
