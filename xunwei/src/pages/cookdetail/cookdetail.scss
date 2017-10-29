@@ -23,7 +23,6 @@ page-cookdetail {
     width: 100%;
   }
   .c_c2 {
-    background: #fff4d6;
     width: 100%;
     padding-left: 20px;
   }
@@ -41,7 +40,7 @@ page-cookdetail {
     display: inline-block;
     position: absolute;
     right: 20px;
-    top: 5px;
+    top: 10px;
     border: 1px solid #ff4c39;
 
     font-size: 16px;
@@ -91,5 +90,8 @@ page-cookdetail {
   .footCss{
     text-align: center;
     font-size: 2.5rem;
+  }
+  .red{
+    color: red;
   }
 }
