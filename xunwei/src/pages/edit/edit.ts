@@ -27,12 +27,15 @@ export class EditPage {
   }
 
   editor(){
+    this.viewCtrl.dismiss();
     this.navCtrl.push(EditorPage);
   }
   editicon(){
+    this.viewCtrl.dismiss();
     this.navCtrl.push(EditiconPage);
   }
   editpass(){
+    this.viewCtrl.dismiss();
     this.navCtrl.push(EditpassPage);
   }
 
