@@ -39,13 +39,17 @@ import {CookdetailPage} from '../pages/cookdetail/cookdetail'//菜谱详情页
 import {CooklistPage} from "../pages/cooklist/cooklist"//菜谱列表
 import {CooksearchPage} from "../pages/cooksearch/cooksearch"//菜谱搜索
 import {SeachlistPage} from "../pages/seachlist/seachlist"//搜索结果
+import {CookcommentPage} from "../pages/cookcomment/cookcomment"//菜谱评论
 //服务
 import {HttpClientModule} from "@angular/common/http"
 import{HealthService} from '../providers/health.service'
 import {CookbookService} from "../providers/cookbook.service"
 import{ UsersService } from '../providers/users.service'
 import{ PersonalService } from '../providers/personal.service'
-
+import {AddclService} from "../providers/addcl.service"
+import {AddplService} from "../providers/addpl.service"
+import {CommentService} from "../providers/comment.service"
+import {FollowService} from "../providers/follow.service"
 //管道
 import{IndexhotmenuPipe} from'./../pipes/indexhotmenu.pipe'
 import{JiequPipe} from'./../pipes/jiequ.pipe'
@@ -99,6 +103,7 @@ import {OrderbyPipe} from "../pipes/orderby.pipe"
     TopicdetailPage,
     HomejiaPage,
     SeachlistPage,
+    CookcommentPage,//菜谱评论
   ],
   imports: [
     BrowserModule,
@@ -139,6 +144,7 @@ import {OrderbyPipe} from "../pipes/orderby.pipe"
     TopicdetailPage,
     HomejiaPage,
     SeachlistPage,
+    CookcommentPage,//菜谱评论页
   ],
   providers: [
     StatusBar,
@@ -147,7 +153,11 @@ import {OrderbyPipe} from "../pipes/orderby.pipe"
     CookbookService,
     HealthService,
     UsersService,
-    PersonalService
+    PersonalService,
+    AddclService,//收藏
+    AddplService,//评论
+    CommentService,
+    FollowService,//关注
   ]
 })
 export class AppModule {}

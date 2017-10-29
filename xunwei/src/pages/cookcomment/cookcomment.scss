@@ -1,0 +1,16 @@
+page-cookcomment {
+  ion-header{
+    font-size: 2rem;
+  }
+  textarea {
+    color: #333;
+    border: 0px;
+    height: 200px;
+    width: 100%;
+    box-sizing: border-box;
+    background: #fdfdfd;
+    padding: 10px 16px;
+    font-size: 16px;
+    line-height: 24px;
+  }
+}

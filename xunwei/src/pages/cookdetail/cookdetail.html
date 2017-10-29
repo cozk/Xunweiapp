@@ -7,10 +7,10 @@
 <ion-header>
   <ion-grid>
     <ion-row>
-      <ion-col col-4 (click)="back()">
+      <ion-col col-1 (click)="back()">
         <ion-icon name="arrow-back" ></ion-icon>
       </ion-col>
-      <ion-col col-4 style="text-align: center"><ion-note>{{cookDetail?.ckname}}</ion-note></ion-col>
+      <ion-col col-11 style="text-align: center"><ion-note>{{cookDetail?.ckname}}</ion-note></ion-col>
     </ion-row>
   </ion-grid>
 
@@ -30,8 +30,8 @@
       <ion-avatar item-start>
         <img src="../../assets/imgs/111.jpg">
       </ion-avatar>
-      <h2>大菠萝</h2>
-      <!--<button ion-button clear item-end class="gzbtn">关注</button>-->
+      <h2>{{cookDetail?.ckauthor}}</h2>
+      <span class="gzbtn" (click)="follow(cookDetail?.cktelephone)" >加关注</span>
     </ion-item>
   </ion-list>
   <!--工艺，口味-->
@@ -111,20 +111,20 @@
   </ion-card>
 
 
-  <ion-card>
+  <ion-card *ngIf="showComment">
   <ion-card-content>
-    <ion-item-group>
+    <ion-item-group *ngFor="let comment of _comment">
       <ion-item>
         <ion-avatar item-start>
           <img src="./../../assets/home/index1.jpg">
         </ion-avatar>
         <ion-row>
-          <ion-col col-10><span style="display: inline-block; width:100%; font-size: 14px; color: #8e9093;">大菠萝</span></ion-col>
+          <ion-col col-10><span style="display: inline-block; width:100%; font-size: 14px; color: #8e9093;">{{comment?.pinglunid}}</span></ion-col>
           <!--<ion-col col-2><span style="display: inline-block; font-size: 15px; width: 100%; color: rgb(253,111,99);">回复</span></ion-col>-->
         </ion-row>
       </ion-item>
       <ion-row>
-        <ion-col col-10><span style="display: inline-block; width:100%; font-size: 16px; color: #8e9093;padding: 0px 20px 0px 35px">好吃</span></ion-col>
+        <ion-col col-10><span style="display: inline-block; width:100%; font-size: 16px; color: #8e9093;padding: 0px 20px 0px 35px">{{comment?.pingluncontent}}</span></ion-col>
       </ion-row>
     </ion-item-group>
   </ion-card-content>
@@ -134,13 +134,12 @@
 <ion-footer>
   <ion-grid>
     <ion-row>
-      <ion-col col-4 (click)="back()" class="footCss">
-        <ion-icon name="ios-thumbs-up-outline" ></ion-icon>
+
+      <ion-col col-6 class="footCss">
+        <ion-icon name="ios-star-outline" *ngIf="collectred"  (click)="addCollect()"></ion-icon>
+        <ion-icon name="ios-star" *ngIf="!collectred" color="danger"  (click)="addCollect()"></ion-icon>
       </ion-col>
-      <ion-col col-4 class="footCss">
-        <ion-icon name="ios-star-outline"></ion-icon>
-      </ion-col>
-      <ion-col col-4 class="footCss">
+      <ion-col col-6 class="footCss" (click)="toComment(cookDetail?.ckname)">
         <ion-icon name="ios-text-outline"></ion-icon>
       </ion-col>
     </ion-row>
