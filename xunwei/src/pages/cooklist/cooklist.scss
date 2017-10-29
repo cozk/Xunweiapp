@@ -2,7 +2,7 @@ page-cooklist {
   [col-4] {
     font-size: 2rem;
   }
-  .note-ios {
+  .note-ios,.note-md {
     color: #333;
   }
   ul{
@@ -14,14 +14,16 @@ page-cooklist {
     padding-left: 20px;
     float: left;
   }
-  .segment-md .segment-button,.segment-ios .segment-button{
-    color: #333;
-    font-size: 1.6rem;
-    border-color: transparent;
+  .button-md,.button-ios{
+    border-radius: 1.5rem;
   }
-  .segment-md .segment-button.segment-activated, .segment-ios .segment-button.segment-activated{
-    background: #ccc;
-    color: #333;
+  .button-ios:hover{
+    background-color: #2ec95c;
+    color: #fff;
+  }
+  .button-outline-md-dark:hover:not(.disable-hover) {
+    background-color: #2ec95c;
+    color: #fff;
   }
   .list-ios {
     margin: 0px 0 32px;

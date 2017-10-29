@@ -10,15 +10,21 @@ import {CooksearchPage} from "../cooksearch/cooksearch";
 })
 export class AboutPage {
   items:any;
+  _hot=1;
   cookArray = ['jia','zhong','wai','hong'];
   cookbookModel: string = this.cookArray[0];
-  isOutline: boolean = false;
   constructor(
     public navCtrl: NavController,
     public modalCtrl:ModalController,
     public cookbookSer:CookbookService,
     ) {
 
+  }
+  hot(){
+    this._hot=1;
+  }
+  new(){
+    this._hot=2;
   }
   ionViewDidLoad() {
     console.log("11111111111,当页面加载时触发，仅在页面创建时，触发一次");
@@ -29,32 +35,10 @@ export class AboutPage {
       console.log(this.items);
     })
   }
-  swipeEvent(event) {
-    //向左滑
-    if (event.direction == 2) {
-      if (this.cookArray.indexOf(this.cookbookModel) < 2) {
-        this.cookbookModel = this.cookArray[this.cookArray.indexOf(this.cookbookModel) + 1];
-      }
-    }
-//向右滑
-    if (event.direction == 4) {
-      if (this.cookArray.indexOf(this.cookbookModel) > 0) {
-        this.cookbookModel = this.cookArray[this.cookArray.indexOf(this.cookbookModel) - 1];
-      }
-    }
-  }
-
-
     //点击进入详情页
     itemSelected(item) {
       console.log("菜名");
       console.log(item);
-      // this.viewCtrl.dismiss();
-      // this.navCtrl.push(CookdetailPage);
-      // item && this.navCtrl.push(CookdetailPage,{"post_id":item.postId});
-
-      // this.appCtrl.getRootNav().push(PostDetailPage);
-
       let modelPage=this.modalCtrl.create(CookdetailPage,{"_ckname": item});
       modelPage.onDidDismiss(data => {
         console.log(data);
@@ -63,8 +47,23 @@ export class AboutPage {
       modelPage.present();
     }
     //进入菜谱更多页面
-    toList(){
-      let modelPage=this.modalCtrl.create(CooklistPage);
+    toListjia(){
+      let modelPage=this.modalCtrl.create(CooklistPage,{'_title':'家常菜谱'});
+      modelPage.present();
+
+    }
+    toListzhong(){
+      let modelPage=this.modalCtrl.create(CooklistPage,{'_title':'中华美食'});
+      modelPage.present();
+
+    }
+    toListwai(){
+      let modelPage=this.modalCtrl.create(CooklistPage,{'_title':'外国料理'});
+      modelPage.present();
+
+    }
+    toListhong(){
+      let modelPage=this.modalCtrl.create(CooklistPage,{'_title':'烘焙'});
       modelPage.present();
 
     }

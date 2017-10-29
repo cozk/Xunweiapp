@@ -1,11 +1,36 @@
 page-login {
-  .login-title{
+
+  .login-title {
     font-size: 2em;
     text-align: center;
-    margin-bottom: 3em;
-    margin-top: 1em;
+    margin-bottom: 1em;
+    margin-top: 1.15em;
   }
-  .error-message{
+  .error-message {
     color: red;
+    font-size: 0.8em;
+  }
+  .login-info {
+    text-align: center;
+    margin-bottom: 1.5em;
+  }
+  .line-right {
+    width: 4em;
+    color: black;
+    display: inline-block;
+  }
+  .loginbtn {
+    margin-top: 5em;
+  }
+  a {
+    text-decoration: none;
+  }
+  .cancel{
+    font-size: 2.5em;
+  }
+  .toregister{
+    text-align: right;
+    padding: 5px;
+    margin: auto 0;
   }
 }

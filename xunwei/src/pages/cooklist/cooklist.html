@@ -10,47 +10,48 @@
       <ion-col col-4 (click)="back()">
         <ion-icon name="arrow-back" ></ion-icon>
       </ion-col>
-      <ion-col col-4 style="text-align: center"><ion-note>家常菜谱</ion-note></ion-col>
-      <ion-col col-4 style="text-align: right"(click)="toSearch()">
+      <ion-col col-4 style="text-align: center"><ion-note>{{_title}}</ion-note></ion-col>
+      <ion-col col-4 style="text-align: right" (click)="toSearch()">
         <ion-icon name="search"></ion-icon>
       </ion-col>
     </ion-row>
   </ion-grid>
-
+  <ion-list>
+    <ul *ngIf="Showjia">
+      <li *ngFor="let item of list01">
+        <button ion-button color="dark" outline (click)="groupBy(item.list01)">{{item.list01}}</button>
+      </li>
+    </ul>
+    <ul *ngIf="Showzhong">
+      <li *ngFor="let item of list02">
+        <button ion-button color="dark" outline (click)="groupBy(item.list02)">{{item.list02}}</button>
+      </li>
+    </ul>
+    <ul *ngIf="Showwai">
+      <li *ngFor="let item of list03">
+        <button ion-button color="dark" outline (click)="groupBy(item.list03)">{{item.list03}}</button>
+      </li>
+    </ul>
+    <ul *ngIf="Showhong">
+      <li *ngFor="let item of list04">
+        <button ion-button color="dark" outline (click)="groupBy(item.list04)">{{item.list04}}</button>
+      </li>
+    </ul>
+  </ion-list>
 
 </ion-header>
 
 
 <ion-content >
-  <div padding>
-    <ion-segment [(ngModel)]="cooklistModel">
-      <ion-segment-button *ngFor="let item of list01" value="{{item.val}}">
-        {{item.list01}}
-      </ion-segment-button>
-    </ion-segment>
-  </div>
-
-  <div [ngSwitch]="cooklistModel">
-    <ion-list *ngSwitchCase="'01'" no-lines >
-      <ion-item>
-        <ion-thumbnail item-start >
-          <img src="../../assets/imgs/cookbook/hong01.jpg">
-        </ion-thumbnail>
-        <h2>小新游泳蛋糕</h2>
-        <p>大菠萝</p>
-        <p>原料：</p>
-      </ion-item>
-    </ion-list>
-
-    <ion-list *ngSwitchCase="'02'" no-lines>
-      <ion-item>
-        <ion-thumbnail item-start >
-          <img src="../../assets/imgs/cookbook/hong01.jpg">
-        </ion-thumbnail>
-        <h2>小新游泳蛋糕</h2>
-        <p>大菠萝</p>
-        <p>原料：</p>
-      </ion-item>
-    </ion-list>
-  </div>
+  <ion-list  no-lines>
+    <ion-item *ngFor="let cook of _result|searchCooks:_text" (click)="itemSelected(cook?.ckname)">
+      <ion-thumbnail item-start >
+        <img src="../../assets/imgs/cookbook/{{cook?.ckimg}}">
+      </ion-thumbnail>
+      <h2>{{cook?.ckname}}</h2>
+      <p>大菠萝</p>
+      <p>工艺:{{cook?.ckgongyi}}
+        口味:{{cook?.ckkouwei}}</p>
+    </ion-item>
+  </ion-list>
 </ion-content>

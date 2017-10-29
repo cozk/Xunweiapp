@@ -1,17 +1,16 @@
 <ion-header>
-  <ion-navbar>
+
     <ion-grid>
       <ion-row>
         <ion-col col-4 ></ion-col>
-        <ion-col col-4 style="text-align: center"><ion-note>家常菜谱</ion-note></ion-col>
+        <ion-col col-4 style="text-align: center"><ion-note>菜谱大全</ion-note></ion-col>
         <ion-col col-4 style="text-align: right" (click)="toSearch()">
           <ion-icon name="search"></ion-icon>
         </ion-col>
       </ion-row>
     </ion-grid>
-  </ion-navbar>
-  
-  <ion-toolbar no-border-top>
+
+  <ion-toolbar no-border>
     <ion-segment [(ngModel)]="cookbookModel">
       <ion-segment-button value="jia" >
         家常菜谱
@@ -29,17 +28,17 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content  (swipe)="swipeEvent($event)">
+<ion-content >
   <div [ngSwitch]="cookbookModel">
     <ion-list *ngSwitchCase="'jia'">
       <ion-item no-lines >
         <ion-grid>
           <ion-row>
             <ion-col col-6>
-              <button ion-button color="dark" [outline]="isOutline">最新</button>
-              <button ion-button color="dark" outline>最热</button>
+              <button ion-button color="dark" outline (click)="new()">最新</button>
+              <button ion-button color="dark" outline (click)="hot()">最热</button>
             </ion-col>
-            <ion-col col-6 (click)="toList()" style="text-align: right">
+            <ion-col col-6 (click)="toListjia()" style="text-align: right">
               <button ion-button color="dark" outline >更多<ion-icon name="ios-arrow-forward"></ion-icon></button>
             </ion-col>
           </ion-row>
@@ -49,7 +48,7 @@
       <ion-grid>
         <ion-row>
             <ul col-12>
-              <li col-6 *ngFor="let item of items|jiachang" (click)="itemSelected(item?.ckname)">
+              <li col-6 *ngFor="let item of items|jiachang|orderBy:_hot" (click)="itemSelected(item?.ckname)">
                 <ion-card>
                   <img src="../../assets/imgs/cookbook/{{item?.ckimg}}"/>
                   <ion-card-content>
@@ -67,10 +66,10 @@
         <ion-grid>
           <ion-row>
             <ion-col col-6>
-              <button ion-button color="dark" [outline]="isOutline">最新</button>
-              <button ion-button color="dark" outline>最热</button>
+              <button ion-button color="dark" outline (click)="new()">最新</button>
+              <button ion-button color="dark" outline (click)="hot()">最热</button>
             </ion-col>
-            <ion-col col-6 (click)="toList()" style="text-align: right">
+            <ion-col col-6 (click)="toListzhong()" style="text-align: right">
               <button ion-button color="dark" outline >更多<ion-icon name="ios-arrow-forward"></ion-icon></button>
             </ion-col>
           </ion-row>
@@ -80,7 +79,7 @@
       <ion-grid>
         <ion-row>
           <ul col-12>
-            <li col-6 *ngFor="let item of items|zhonghua" (click)="itemSelected(item?.ckname)">
+            <li col-6 *ngFor="let item of items|zhonghua|orderBy:_hot" (click)="itemSelected(item?.ckname)">
               <ion-card>
                 <img src="../../assets/imgs/cookbook/{{item?.ckimg}}"/>
                 <ion-card-content>
@@ -98,10 +97,10 @@
         <ion-grid>
           <ion-row>
             <ion-col col-6>
-              <button ion-button color="dark" [outline]="isOutline">最新</button>
-              <button ion-button color="dark" outline>最热</button>
+              <button ion-button color="dark" outline (click)="new()">最新</button>
+              <button ion-button color="dark" outline (click)="hot()">最热</button>
             </ion-col>
-            <ion-col col-6 (click)="toList()" style="text-align: right">
+            <ion-col col-6 (click)="toListwai()" style="text-align: right">
               <button ion-button color="dark" outline >更多<ion-icon name="ios-arrow-forward"></ion-icon></button>
             </ion-col>
           </ion-row>
@@ -111,7 +110,7 @@
       <ion-grid>
         <ion-row>
           <ul col-12>
-            <li col-6 *ngFor="let item of items|waiguo" (click)="itemSelected(item?.ckname)">
+            <li col-6 *ngFor="let item of items|waiguo|orderBy:_hot" (click)="itemSelected(item?.ckname)">
               <ion-card>
                 <img src="../../assets/imgs/cookbook/{{item?.ckimg}}"/>
                 <ion-card-content>
@@ -129,10 +128,10 @@
         <ion-grid>
           <ion-row>
             <ion-col col-6>
-              <button ion-button color="dark" [outline]="isOutline">最新</button>
-              <button ion-button color="dark" outline>最热</button>
+              <button ion-button color="dark" outline (click)="new()">最新</button>
+              <button ion-button color="dark" outline (click)="hot()">最热</button>
             </ion-col>
-            <ion-col col-6 (click)="toList()" style="text-align: right">
+            <ion-col col-6 (click)="toListhong()" style="text-align: right">
               <button ion-button color="dark" outline >更多<ion-icon name="ios-arrow-forward"></ion-icon></button>
             </ion-col>
           </ion-row>
@@ -142,7 +141,7 @@
       <ion-grid>
         <ion-row>
           <ul col-12>
-            <li col-6 *ngFor="let item of items|hongpei" (click)="itemSelected(item?.ckname)">
+            <li col-6 *ngFor="let item of items|hongpei|orderBy:_hot" (click)="itemSelected(item?.ckname)">
               <ion-card>
                 <img src="../../assets/imgs/cookbook/{{item?.ckimg}}"/>
                 <ion-card-content>
