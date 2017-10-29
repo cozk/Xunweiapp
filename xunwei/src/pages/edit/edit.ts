@@ -1,13 +1,8 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams,ViewController } from 'ionic-angular';
-
-/**
- * Generated class for the EditPage page.
- *
- * See https://ionicframework.com/docs/components/#navigation for more info on
- * Ionic pages and navigation.
- */
-
+import { EditiconPage } from '../editicon/editicon';
+import { EditorPage } from '../editor/editor';
+import { EditpassPage } from '../editpass/editpass';
 
 @IonicPage()
 @Component({
@@ -15,14 +10,33 @@ import { IonicPage, NavController, NavParams,ViewController } from 'ionic-angula
   templateUrl: 'edit.html',
 })
 export class EditPage {
-  constructor(public navCtrl: NavController, public navParams: NavParams, public viewCtrl: ViewController,) {
+  constructor(
+    public navCtrl: NavController,
+    public navParams: NavParams,
+    public viewCtrl: ViewController,
+  ) {
+
   }
 
   ionViewDidLoad() {
-    console.log('ionViewDidLoad EditPage');
+
   }
 
   toback() {
     this.viewCtrl.dismiss();
   }
+
+  editor(){
+    this.viewCtrl.dismiss();
+    this.navCtrl.push(EditorPage);
+  }
+  editicon(){
+    this.viewCtrl.dismiss();
+    this.navCtrl.push(EditiconPage);
+  }
+  editpass(){
+    this.viewCtrl.dismiss();
+    this.navCtrl.push(EditpassPage);
+  }
+
 }

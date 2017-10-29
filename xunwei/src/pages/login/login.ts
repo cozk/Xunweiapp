@@ -1,7 +1,5 @@
 import {Component} from '@angular/core';
-import {
-  NavController, NavParams, AlertController, ToastController, App, ViewController, ModalController
-} from 'ionic-angular';
+import {NavController, NavParams, AlertController, ToastController, App, ViewController, ModalController} from 'ionic-angular';
 import {TabsPage} from '../tabs/tabs';
 import {Storage} from '@ionic/storage';
 import {UsersService} from '../../providers/users.service';
@@ -59,18 +57,18 @@ export class LoginPage {
   }
 
   login(user) {
-    this.userSer.login(user).then((result) => {
-      console.log(result);
-      if (result) {
-        if (result.stateCode === 1) {
-          this.storage.ready().then(() => {
-            this.storage.set('isLogin', true);
-            this.storage.set('userId', result.telephone);
-            this.storage.set('token', result.token);
-            this.storage.set('nickname', result.name);
-            this.storage.set('fensi', result.fensi);
-            this.storage.set('guanzhu', result.guanzhu);
-            this.storage.set('icon', result.icon);
+    this.userSer.login(user).then((result)=> {
+      if(result){
+        if(result.stateCode===1){
+          this.storage.ready().then(()=>{
+            this.storage.set('isLogin',true);
+            this.storage.set('password',user.password);
+            this.storage.set('userId',user.telephone);
+            this.storage.set('token',result.token);
+            this.storage.set('nickname',result.name);
+            this.storage.set('fensi',result.fensi);
+            this.storage.set('guanzhu',result.guanzhu);
+            this.storage.set('icon',result.icon);
           });
           this.viewCtrl.dismiss();
           this.navCtrl.push(TabsPage);
