@@ -1,0 +1,39 @@
+
+<ion-header>
+    <ion-row>
+      <ion-col col-4>
+        <ion-icon name="ios-arrow-back" (click)="toback()" style="font-size: 30px !important;"></ion-icon>
+      </ion-col>
+      <ion-col col-4 style="text-align:center ;font-size: 20px !important; ">
+        <ion-note style="color: #000">修改密码</ion-note>
+      </ion-col>
+      <ion-col col-4>
+      </ion-col>
+    </ion-row>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <ion-row>
+    <ion-col col-12>
+      <form  [formGroup]="editpwdForm" (ngSubmit)="editpwd(editpwdForm.value)" novalidate>
+        <ion-item [class.error]="!password.valid && password.touched">
+          <ion-input type="password" placeholder="请输入原密码"  [formControl]="password" clearInput=true></ion-input>
+        </ion-item>
+        <ion-label *ngIf="password.hasError('required') && password.touched" class="error-message">* 请输入密码</ion-label>
+        <ion-label *ngIf="(newpassword.hasError('minlength')||newpassword.hasError('maxlength')) && newpassword.touched" class="error-message">* 密码长度最少为六位</ion-label>
+        <ion-label  *ngIf="_istrue">* 请输入正确密码</ion-label>
+        <ion-item>
+          <ion-input type="password" placeholder="请输入新密码"  [formControl]="newpassword" clearInput=true></ion-input>
+        </ion-item>
+        <ion-label *ngIf="newpassword.hasError('required') && newpassword.touched" class="error-message">* 请输入密码</ion-label>
+        <ion-label *ngIf="(newpassword.hasError('minlength')||newpassword.hasError('maxlength')) && newpassword.touched" class="error-message">* 密码长度最少为六位</ion-label>
+        <ion-label  *ngIf="match">新密码不能和旧密码相同</ion-label>
+        <button ion-button block color="secondary" type="submit" [disabled]="!editpwdForm.valid">确定修改</button>
+      </form>
+    </ion-col>
+    <!--end form-->
+  </ion-row>
+</ion-content>

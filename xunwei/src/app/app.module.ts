@@ -17,6 +17,10 @@ import { SettingPage } from '../pages/setting/setting';
 import { GuanzhuPage } from '../pages/guanzhu/guanzhu';
 import { FensiPage } from '../pages/fensi/fensi';
 import { EditPage } from '../pages/edit/edit';
+import { EditiconPage } from '../pages/editicon/editicon';
+import { EditorPage } from '../pages/editor/editor';
+import { EditpassPage } from '../pages/editpass/editpass';
+
 import { UpPage } from '../pages/up/up';
 import { LoginPage }from '../pages/login/login'
 import { RegisterPage }from '../pages/register/register'
@@ -71,6 +75,9 @@ import {OrderbyPipe} from "../pipes/orderby.pipe"
     GuanzhuPage,
     FensiPage,
     EditPage,
+    EditpassPage,
+    EditorPage,
+    EditiconPage,
     UpPage,
     CaipuPage,
     PinglunPage,
@@ -117,6 +124,9 @@ import {OrderbyPipe} from "../pipes/orderby.pipe"
     GuanzhuPage,
     FensiPage,
     EditPage,
+    EditpassPage,
+    EditorPage,
+    EditiconPage,
     UpPage,
     CaipuPage,
     PinglunPage,

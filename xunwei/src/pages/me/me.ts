@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component,OnInit } from '@angular/core';
 import { IonicPage, NavController, NavParams,ModalController } from 'ionic-angular';
 import { SettingPage } from '../setting/setting';
 import { GuanzhuPage } from '../guanzhu/guanzhu';
@@ -12,7 +12,7 @@ import { PersonalService } from '../../providers/personal.service';
 import { UsersService } from '../../providers/users.service';
 
 import 'rxjs/add/operator/toPromise';
-declare var $:any;
+
 @IonicPage()
 
 @Component({
@@ -20,20 +20,15 @@ declare var $:any;
   templateUrl: 'me.html',
   providers:[PersonalService,UsersService]
 })
-export class MePage {
+export class MePage implements OnInit{
   guanzhu:any;
   fensi:any;
   nickname:any;
+  icon:any;
   label:any;
   kinds: string ="caipu"
   _iAmLogin:any;
   userId:any;
-  all_itemscaipu:any;
-  all_itemspinglun:any;
-  all_itemsshoucang:any;
-  itemscaipu:any
-  itemspinglun:any
-  itemsshoucang:any
   len:any;
   constructor(
     public navCtrl: NavController,
@@ -45,20 +40,11 @@ export class MePage {
   ) {
   }
 
-  ionViewDidLoad() {
+  ngOnInit() {
     this.storage.ready().then(() => {
       this.storage.get('isLogin').then((val) => {
         if(val){
           this._iAmLogin=true;
-          // this.storage.get('userId').then((val) => {
-          //   //只能传json;
-          //   let user = {userId:val};
-          //   this.perSer.work(user).then((result)=> {
-          //     console.log(result);
-          //     this.all_itemscaipu=result;
-          //     this.itemscaipu=this.all_itemscaipu.slice(0,5);
-          //   })
-          // });
           this.storage.get('nickname').then((val) => {
             let that = this;
             that.nickname = val;
@@ -66,6 +52,10 @@ export class MePage {
           this.storage.get('guanzhu').then((val) => {
             let that = this;
             that.guanzhu = val;
+          });
+          this.storage.get('icon').then((val) => {
+            let that = this;
+            that.icon = val;
           });
           this.storage.get('fensi').then((val) => {
             let that = this;
@@ -82,7 +72,6 @@ export class MePage {
       })
     });
   }
-
 
 
   toLogin(){

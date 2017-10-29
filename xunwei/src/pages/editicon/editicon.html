@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-row>
+    <ion-col col-4>
+      <ion-icon name="ios-arrow-back" (click)="toback()" style="font-size: 30px !important;"></ion-icon>
+    </ion-col>
+    <ion-col col-4 style="text-align:center ;font-size: 20px !important; ">
+      <ion-note style="color: #000">修改头像</ion-note>
+    </ion-col>
+    <ion-col col-4>
+    </ion-col>
+  </ion-row>
+</ion-header>
+
+
+<ion-content padding>
+  <div class="col-md-12 col-lg-12">
+    <div class="row">
+      <div class="coll">
+        <br>
+        <form class="form-horizontal"  id="upload_form">
+          <div class="form-group">
+            <label for="upload_file" class="col-sm-2 control-label">点击设置头像</label>
+            <br>
+            <div class="col-sm-8" style="height: 115px;">
+              <input type="file" class="form-control"  id="upload_file" accept="image/*" name="user_icon">
+              <div id="preview">
+                <img src="http://localhost:3000/uploads/personal/{{icon}}">
+              </div>
+            </div>
+            <div class="col-sm-4 col-sm-push-2">
+              <input type="button" (click)="toupload()" class="btn btn-success" style="background-color: grey; color: white;"  value="确认" />
+            </div>
+          </div>
+          <br>
+        </form>
+      </div>
+    </div>
+  </div>
+</ion-content>
