@@ -5,6 +5,7 @@ import 'rxjs/add/operator/toPromise';
 @Injectable()
 export class UsersService {
 
+  // url:string='http://101.132.140.182:3000/users';
   url:string='http://localhost:3000/users';
   constructor(
     private http:HttpClient,
@@ -17,15 +18,19 @@ export class UsersService {
     return this.http.post(this.url+'/login',user).toPromise().then((data)=> data)
   }
 
+
   register(user):Promise<any>{
     return this.http.post(this.url+'/regist',user).toPromise().then((data)=>data)
   }
-  // register(user,callback){
-  //   this.http.post(this.url+'/regist',user).subscribe(function (result) {//subscribe（）异步处理，如果需要用返回的数据，最好把方法写在里面。
-  //       callback(result);
-  //     },
-  //     function (error) {
-  //       console.log(error.message);
-  //     })
-  // }
+
+  edit(user):Promise<any> {
+    return this.http.post(this.url + '/edit', user).toPromise().then((data) => data
+    )
+  }
+
+  editpass(user):Promise<any> {
+    return this.http.post(this.url + '/editpass', user).toPromise().then((data) => data
+    )
+  }
+
 }
