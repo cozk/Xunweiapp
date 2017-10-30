@@ -1,7 +1,5 @@
 import { Component,OnInit } from '@angular/core';
 import { IonicPage, NavController, NavParams ,ViewController,} from 'ionic-angular';
-import { FormBuilder, Validators, FormGroup } from '@angular/forms';
-import { UsersService } from '../../providers/users.service';
 import { Storage } from '@ionic/storage';
 import { TabsPage } from '../tabs/tabs';
 declare var $:any;
@@ -23,8 +21,6 @@ export class EditiconPage implements OnInit{
     public navCtrl: NavController,
     public navParams: NavParams,
     public viewCtrl: ViewController,
-    private formBuilder: FormBuilder,
-    private userSer:UsersService,
     private storage:Storage,
   ) {
   }
@@ -36,7 +32,7 @@ export class EditiconPage implements OnInit{
       this.storage.get('icon').then((val) => {
         this.icon = val;
       });
-      that.storage.get('userId').then((val) => {
+      this.storage.get('userId').then((val) => {
             _val = val;
       })
     })
@@ -79,7 +75,7 @@ export class EditiconPage implements OnInit{
             })
             alert('头像重复');
           } else if(result.stateCode == 0){
-            alert('上传失败111');
+            alert('上传失败0');
           }else{
             that.storage.ready().then(()=> {
               that.storage.set('icon', result.icon);
