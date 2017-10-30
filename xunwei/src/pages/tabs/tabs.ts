@@ -3,7 +3,7 @@ import { AboutPage } from '../about/about';
 import { ContactPage } from '../contact/contact';
 import { HomePage } from '../home/home';
 import { MePage } from '../me/me';
-
+import { Storage } from '@ionic/storage';
 
 @Component({
   templateUrl: 'tabs.html'
@@ -14,10 +14,22 @@ export class TabsPage {
   tab3Root = ContactPage;
   tab4Root = MePage;
   @ViewChild('rootTabs') tabRef:any;
-  constructor() {
+  constructor(
+    private storage:Storage,
+  ) {
 
   }
   ionViewDidEnter() {
-    this.tabRef.select(0);
-  }
+    // this.storage.ready().then(() => {
+    //   this.storage.get('isLogin').then((val) => {
+    //     if (val) {
+    //       this.tabRef.select(3)
+    //     }
+    //     else {
+          this.tabRef.select(0);
+  //       }
+    //     })
+    //   })
+    //
+    }
 }
