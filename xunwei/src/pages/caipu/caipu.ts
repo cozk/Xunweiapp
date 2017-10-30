@@ -42,7 +42,9 @@ export class CaipuPage implements OnInit{
             //只能传json;
             let user = {userId: val};
             this.perSer.work(user).then((result) => {
-              if(result && result[0].cookimg){
+              console.log(result.length);
+              console.log(result[0].cookimg);
+              if(result.length){
                 this._caipu=false;
                 this.all_items=result;
                 this.items=this.all_items.slice(0,5);
